@@ -1,0 +1,25 @@
+@use '../../styles/vars';
+
+.menuLeft {
+  width: 20%;
+  margin-top: 3rem;
+  height: 90vh;
+  border: 6px solid black;
+  overflow-y: scroll;
+
+}
+
+.menuLeft-titre {
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 1.2rem;
+  text-align: center;
+  width: 20%;
+  height: 40px;
+  border: 6px solid var(--theme-page-text);
+  background: var(--theme-page-background);
+}
+
+
+

@@ -1,0 +1,23 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  font-family: 'EB Garamond', serif;
+  background: var(--theme-page-background);
+  color: var(--theme-page-text);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scroll-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scroll-thumb);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scroll-thumb-hover);
+}
