@@ -1,11 +1,14 @@
+//reducer
 import js from '../assets/images/js.png';
 import php from '../assets/images/php.png';
 import react from '../assets/images/react.png';
 import css from '../assets/images/css3.png';
 import html from '../assets/images/html5.png';
 import python from '../assets/images/python.png';
+import { SAVE_SKILL } from '../actions';
 
-export default [
+const initialState = {
+ skill : [
   {
     id: 1,
     name: 'JS',
@@ -48,4 +51,19 @@ export default [
     image: python,
     color: '#4f53bd'
   }
-];
+ ]
+};
+
+const reducer = (state = initialState, action = {}) => {
+  switch (action.type) {
+/*     case SAVE_SKILL:
+      return {
+        ...state,
+        skill: state.skill,
+      }; */
+    default:
+      return state;
+  }
+};
+
+export default reducer;

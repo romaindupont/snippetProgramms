@@ -1,21 +1,25 @@
 .light {
-    --theme-color: #A80000;
-    --theme-page-background: #FFF;
-    --theme-page-text: #111;
-    --theme-page-background-hover: #111;
-    --theme-page-text-hover: #FFF;
-    --scroll-bg :#f1f1f1;
-    --scroll-thumb : #888;
-    --scroll-thumb-hover : #555;
+  --theme-color: #A80000;
+  --theme-page-background: #FFF;
+  --theme-page-text: #222;
+  --theme-page-background-hover: #222;
+  --theme-page-text-hover: #FFF;
+  --scroll-bg :#f1f1f1;
+  --scroll-thumb : #888;
+  --scroll-thumb-hover : #555;
+  --box-shadow-color:#222;
+  transition: all 500ms ease-in-out;
   }
 
 .dark {
-    --theme-color: #0000A8;
-    --theme-page-background: #111;
-    --theme-page-text: #FFF;
-    --theme-page-background-hover: #FFF;
-    --theme-page-text-hover: #111;
-    --scroll-bg :#888;
-    --scroll-thumb : #555;
-    --scroll-thumb-hover : #f1f1f1;
+  --theme-color: #0000A8;
+  --theme-page-background: #222;
+  --theme-page-text: #EEE;
+  --theme-page-background-hover: #FFF;
+  --theme-page-text-hover: #222;
+  --scroll-bg :#888;
+  --scroll-thumb : #555;
+  --scroll-thumb-hover : #f1f1f1;
+  --box-shadow-color:#555;
+  transition: all 500ms ease-in-out;
 }

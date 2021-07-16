@@ -7,6 +7,7 @@
   height: 30px;
   background: transparent;
   margin-left: 0.4rem;
+  z-index: 2;
   &--add {
     color: var(--theme-page-text);
     width: 50%;
@@ -20,6 +21,7 @@
       color: var(--theme-page-text-hover);
       border: 2px solid var(--theme-page-text-hover);
       background: var(--theme-page-background-hover);
+
     }
   }
   &--delete {

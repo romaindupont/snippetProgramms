@@ -4,14 +4,14 @@
   width: 20%;
   margin-top: 3rem;
   height: 90vh;
-  border: 6px solid black;
+  border: 6px solid var(--theme-page-text);
   overflow-y: scroll;
-
+  box-shadow: 1px -25px 7px 2px var(--box-shadow-color);
 }
 
 .menuLeft-titre {
   position: fixed;
-  top: 0;
+  top: 10px;
   left: 0;
   font-size: 1.2rem;
   text-align: center;
@@ -19,6 +19,7 @@
   height: 40px;
   border: 6px solid var(--theme-page-text);
   background: var(--theme-page-background);
+  z-index: 2;
 }
 
 

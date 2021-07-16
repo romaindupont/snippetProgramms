@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './style.scss';
-import ContainerLangue from './ContainerLangue';
+import ContainerLangue from '../../containers/LefMenu/ContainerLangue';
 import Button from './Button';
+import AddPopup from './AddPopup';
 
 const LeftMenu = () => {
+  const [ openWindow, setOpenWindow ] = useState(false)
   return (
     <div className="menuLeft">
-      <h1 className="menuLeft-titre">Language</h1>
+      <h1 className="menuLeft-titre">Skills</h1>
       <ContainerLangue />
-      <Button />
+      <Button setOpenWindow={setOpenWindow} openWindow={openWindow} />
+      {openWindow && (<AddPopup setOpenWindow={setOpenWindow}/>)}
     </div>
   )
     

@@ -1,26 +1,61 @@
 .languageContainer {
-  margin-top: 5rem;
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   overflow: auto;
-
+  margin-bottom: 2rem;
+  align-items: center;
   &-img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
+    margin-top: 1rem;
+    width: 25%;
+    z-index: 1;
+ 
   }
   &-titre {
     font-size: 0.8rem;
     text-align: center;
     font-weight: bold;
+    margin-bottom: 0.5rem;
+    z-index: 1;
+    
+  }
+  &-color {
+    width: 60%;
+    height: 10px;
+    display: block;
+    position: absolute;
+    bottom: -5px;
+    left: 20px;
+    border-radius: 15px;
+    transition: all 500ms ease-in-out;
 
   }
-
 }
 
 .languageContainer-all {
-  width: 100%;
-  height: 100px;
+  width: 100px;
+  height: 85px;
   text-align: center;
+  border: 1px solid var(--theme-page-text);
+  border-radius: 15px;
+  margin: 0.5rem 0.5rem;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: border 500ms ease-in-out;
+  &:hover {
+    border: 1px solid var(--theme-page-background);
+  }
+  &:hover > .languageContainer-color {
+    width: 100%;
+    height: 85px;
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    border-radius: 15px;
+  }
+
 }
