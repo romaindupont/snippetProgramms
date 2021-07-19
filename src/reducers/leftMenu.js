@@ -5,7 +5,7 @@ import react from '../assets/images/react.png';
 import css from '../assets/images/css3.png';
 import html from '../assets/images/html5.png';
 import python from '../assets/images/python.png';
-import { SAVE_SKILL } from '../actions';
+import { CHANGE_VALUE, ADD_SKILL } from '../actions';
 
 const initialState = {
  skill : [
@@ -51,16 +51,34 @@ const initialState = {
     image: python,
     color: '#4f53bd'
   }
- ]
+ ],
+ id:'',
+ name:'',
+ image:'',
+ color:''
+
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-/*     case SAVE_SKILL:
+    case CHANGE_VALUE:
       return {
         ...state,
-        skill: state.skill,
-      }; */
+        [action.key]: action.newValue
+      }
+      case ADD_SKILL:
+        return {
+          ...state,
+          skill : [
+            ...state.skill,
+            {
+              id:action.id,
+              name:action.name,
+              image: action.image,
+              color: action.color
+            }
+          ]
+        }
     default:
       return state;
   }

@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import LeftMenu from '../LeftMenu';
 import './style.scss';
 import '../../styles/theme.scss';
+import AddPopup from '../../containers/LefMenu/AddPopup';
 
 function App() {
   const [theme, setTheme] = useState('light');
+  const [ openWindow, setOpenWindow ] = useState(false)
   const checkboxChange = () => {
     if (theme === 'light') {
     setTheme('dark')
@@ -17,12 +19,13 @@ function App() {
     <div className={`App ${theme}`}>
       <header>
         <h1> Snippet Code Save</h1>
-        <label class="switch">
+        <label className="switch">
           <input type="checkbox" onChange={checkboxChange} />
-          <span class="slider"></span>
+          <span className="slider"></span>
         </label>
       </header>
-      <LeftMenu />
+      <LeftMenu openWindow={openWindow} setOpenWindow={setOpenWindow} />
+      {openWindow && (<AddPopup setOpenWindow={setOpenWindow}/>)}
     </div>
   );
 }

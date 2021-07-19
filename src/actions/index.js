@@ -17,3 +17,10 @@ export const deleteSkill = (id) => ({
   type: DELETE_SKILL,
   id,
 });
+
+export const CHANGE_VALUE = 'CHANGE_VALUE';
+export const changeValue = (newValue, key) => ({
+  type: CHANGE_VALUE,
+  newValue,
+  key
+});

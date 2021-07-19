@@ -1,0 +1,113 @@
+.addPopup {
+  position: absolute;
+  top: 400px;
+  left: 700px;
+  background: #b7e4c7;
+  padding: 3rem;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px 2px black;
+  width: 300px;
+  &-close {
+    position: absolute;
+    top: -10px;
+    right: 5px;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  &-logo {
+    margin-bottom: 1rem;
+    &-label {
+      padding-right: 3rem;
+    }
+    &-input {
+      width: 60%;
+      border-radius: 5px;
+      padding: 0.5rem;
+      &:hover {
+        animation: borderHover 2s linear 0.1s infinite;
+      }
+      &:focus {
+        border: 3px solid #037171;
+        &:hover {
+          animation: none;
+        }
+      }
+    }
+  }
+  &-title {
+    margin-bottom: 1rem;
+    &-label {
+      padding-right: 3rem;
+    }
+    &-input {
+      width: 60%;
+      border-radius: 5px;
+      padding: 0.5rem;
+      &:hover {
+        animation: borderHover 2s linear 0.1s infinite;
+      }
+      &:focus {
+        border: 3px solid #037171;
+        &:hover {
+          animation: none;
+        }
+      }
+    }
+  }
+  &-color {
+    margin-bottom: 1rem;
+    width: 100%;
+    &-label {
+      padding-right: 3rem;
+    }
+    &-input {
+      width: 25px;
+      height: 25px;
+      background: #b7e4c7;
+      cursor: pointer;
+    }
+  }
+  &-button {
+    padding: 1rem;
+    margin: 0 auto;
+    box-shadow: 3px 3px 5px 1px black;
+    font-family: 'EB Garamond', serif;
+    font-weight: 900;
+    background: #037171;
+    cursor: pointer;
+    border-radius: 5px 25px;
+    transition: all 400ms ease-in-out;
+    &:hover {
+      color: white;
+      border-radius: 25px 5px;
+    }
+  }
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@keyframes borderHover {
+  0% {
+  }
+  25% {
+    border-top: 2px solid #037171;
+  }
+  50% {
+    border-top: 2px solid #037171;
+    border-right: 2px solid #037171;
+  }
+  75% {
+    border-top: 2px solid #037171;
+    border-right: 2px solid #037171;
+    border-bottom: 2px solid #037171;
+  }
+  100% {
+    border-top: 2px solid #037171;
+    border-right: 2px solid #037171;
+    border-bottom: 2px solid #037171;
+    border-left: 2px solid #037171;
+  }
+}
