@@ -1,6 +1,10 @@
 export const SAVE_SKILL = 'SAVE_SKILL';
-export const saveSkill = () => ({
-  type: SAVE_SKILL
+export const saveSkill = (id, name, image, color) => ({
+  type: SAVE_SKILL,
+  id,
+  name,
+  image,
+  color
 });
 
 export const ADD_SKILL = 'ADD_SKILL';
@@ -23,4 +27,13 @@ export const changeValue = (newValue, key) => ({
   type: CHANGE_VALUE,
   newValue,
   key
+});
+
+export const MODIFY_SKILL = 'MODIFY_SKILL';
+export const modifySkill = (id, name, image, color) => ({
+  type: MODIFY_SKILL,
+  id,
+  name,
+  image,
+  color
 });

@@ -5,7 +5,7 @@ import react from '../assets/images/react.png';
 import css from '../assets/images/css3.png';
 import html from '../assets/images/html5.png';
 import python from '../assets/images/python.png';
-import { CHANGE_VALUE, ADD_SKILL } from '../actions';
+import { CHANGE_VALUE, ADD_SKILL, SAVE_SKILL, MODIFY_SKILL } from '../actions';
 
 const initialState = {
  skill : [
@@ -35,7 +35,7 @@ const initialState = {
   },
   {
     id: 5,
-    name: 'CSS',
+    name: 'CSS3',
     image: css,
     color: '#238f94'
   },
@@ -78,6 +78,31 @@ const reducer = (state = initialState, action = {}) => {
               color: action.color
             }
           ]
+        }
+      case SAVE_SKILL:
+        return {
+          ...state,
+          id: action.id,
+          name: action.name,
+          image: action.image,
+          color: action.color
+        }
+      case MODIFY_SKILL:
+        return {
+          ...state,
+          skill: state.skill.map(skills => {
+            if (skills.id == action.id) {
+              return {
+                id: action.id,
+                name: action.name,
+                image: action.image,
+                color: action.color
+              }
+            }
+            else {
+              return skills;
+            }
+          }),
         }
     default:
       return state;
