@@ -7,7 +7,6 @@ const LeftMenu = ({openWindow, setOpenWindow, setOpenModifyPopup}) => {
  
   return (
     <div className="menuLeft">
-      <h1 className="menuLeft-titre">Skills</h1>
       <ContainerLangue />
       <Button setOpenWindow={setOpenWindow} openWindow={openWindow} setOpenModifyPopup={setOpenModifyPopup} />
     </div>

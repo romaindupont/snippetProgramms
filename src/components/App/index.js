@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import LeftMenu from '../LeftMenu';
+import MenuTitreCode from '../../containers/MenuTitreCode';
 import './style.scss';
 import '../../styles/theme.scss';
 import AddPopup from '../../containers/LefMenu/AddPopup';
@@ -20,7 +21,10 @@ function App() {
         <h1> Snippet Code Save</h1>
         <Ligth onClick={changeSize}/>
       </header>
-      <LeftMenu openWindow={openWindow} setOpenWindow={setOpenWindow} setOpenModifyPopup={setOpenModifyPopup} />
+      <div className="monApp">
+        <LeftMenu openWindow={openWindow} setOpenWindow={setOpenWindow} setOpenModifyPopup={setOpenModifyPopup} />
+        <MenuTitreCode />
+      </div>
       {openWindow && (<AddPopup setOpenWindow={setOpenWindow}/>)}
       {openModifyPopup && (<ModifyPopup setOpenModifyPopup={setOpenModifyPopup}/>)}
     </div>

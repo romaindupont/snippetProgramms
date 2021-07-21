@@ -2,11 +2,9 @@
 
 .menuLeft {
   width: 20%;
-  margin-top: 3rem;
   height: 90vh;
-  border: 6px solid var(--theme-page-text);
+  border: 4px solid var(--theme-page-text);
   overflow-y: scroll;
-  box-shadow: 1px -25px 7px 2px var(--box-shadow-color);
 }
 
 .menuLeft-titre {
