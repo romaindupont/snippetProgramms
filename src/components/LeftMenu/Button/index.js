@@ -10,11 +10,15 @@ const Button = ({setOpenWindow, setOpenModifyPopup}) => {
     setOpenModifyPopup(true)
   }
   return (
+    <div className="div-button">
       <div className="menuLeft-button">
         <button className="menuLeft-button--add" onClick={addClic} >add</button>
         <button className="menuLeft-button--delete" onClick={modifClic}>Modify</button>
       </div>
-      
+      <div className="menuTitreCode-button">
+        <button className="menuTitreCode-button--new">New</button>
+      </div>
+    </div>
   )
     
 }

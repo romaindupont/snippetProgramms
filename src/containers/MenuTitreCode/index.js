@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import MenuTitreCode from '../../components/MenuTitreCode';
 
 const mapStateToProps = (state, ownProps) => ({
-  codes: state.MenuTitreCode.codes
+  codes: state.MenuTitreCode.codes,
+  id: state.leftMenu.id
 });
 const mapDispatchToProps = {}
 /* const mapDispatchToProps = (dispatch, ownProps) => ({

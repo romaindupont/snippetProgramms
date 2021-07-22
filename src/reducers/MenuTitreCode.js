@@ -6,7 +6,7 @@ const initialState = {
     description: "voilà comment faire un rond",
     category: 
       {
-      id: 5,
+      id: 6,
       name: 'CSS3',
       color: '#238f94'
       },
@@ -18,7 +18,7 @@ const initialState = {
     description: "voilà comment faire un triangle",
     category: 
       {
-      id: 5,
+      id: 6,
       name: 'CSS3',
       color: '#238f94'
       },
@@ -30,7 +30,7 @@ const initialState = {
     description: "et une fonction qui fonctionne",
     category: 
       {
-      id: 1,
+      id: 2,
       name: 'js',
       color: '#ffff00'
       },
@@ -42,7 +42,7 @@ const initialState = {
     description: "voilà comment faire un rond",
     category: 
       {
-      id: 5,
+      id: 6,
       name: 'CSS3',
       color: '#238f94'
       },
@@ -50,11 +50,11 @@ const initialState = {
    },
    {
     id: 5,
-    titre: 'faire un rond',
-    description: "voilà comment faire un rond",
+    titre: 'faire un rond petit',
+    description: "voilà comment faire un rond pas rond",
     category: 
       {
-      id: 5,
+      id: 6,
       name: 'CSS3',
       color: '#238f94'
       },
@@ -66,7 +66,7 @@ const initialState = {
     description: "voilà comment faire un rond",
     category: 
       {
-      id: 4,
+      id: 5,
       name: 'SQL',
       color: '#313f88'
       },
@@ -74,11 +74,11 @@ const initialState = {
    },
    {
     id: 7,
-    titre: 'faire un rond',
-    description: "voilà comment faire un rond",
+    titre: 'faire un rond petit',
+    description: "voilà comment faire un rond pas rond",
     category: 
       {
-      id: 6,
+      id: 7,
       name: 'HTML',
       color: '#37ec7f'
       },

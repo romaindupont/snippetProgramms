@@ -1,10 +1,7 @@
 .menuLeft-button {
-  position: fixed;
-  bottom: 0;
-  left: 0;
   display: flex;
   width: 20%;
-  height: 30px;
+  height: 50px;
   background: transparent;
   margin-left: 0.4rem;
   z-index: 2;
@@ -24,6 +21,40 @@
     }
   }
   &--delete {
+    color: var(--theme-page-text);
+    width: 50%;
+    border: 2px solid var(--theme-page-text);
+    border-radius: 5px;
+    background: var(--theme-page-background);
+    font-family: 'EB Garamond', serif;
+    font-weight: 800;
+    cursor: pointer;
+    &:hover {
+      color: var(--theme-page-text-hover);
+      border: 2px solid var(--theme-page-text-hover);
+      background: var(--theme-page-background-hover);
+    }
+  }
+}
+
+.div-button {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+}
+
+.menuTitreCode-button {
+  display: flex;
+  width: 40%;
+  height: 50px;
+  background: transparent;
+  margin-left: 0.4rem;
+  z-index: 2;
+
+  &--new {
     color: var(--theme-page-text);
     width: 50%;
     border: 2px solid var(--theme-page-text);
