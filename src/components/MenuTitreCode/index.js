@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './style.scss';
 
-const MenuTitreCode = ({codes, id}) => {
+const MenuTitreCode = ({codes, id, saveId}) => {
   const [ searchTerm, setSearchTerm ] = useState('');
   const inputWord = (e) => {
     setSearchTerm(e.target.value);
@@ -13,6 +13,11 @@ const MenuTitreCode = ({codes, id}) => {
   else {
     newList = codes.filter((code) => parseInt(code.category.id) === parseInt(id) && (code.titre.includes(searchTerm) || code.description.includes(searchTerm)));
   }
+  const clicTitle = (e) => {
+    e.preventDefault();
+    saveId(e.target.getAttribute('data-my-id'))
+    
+  }
   return (
     <div className="menuTitreCode">
       <div className="menuTitreCode-search">
@@ -21,10 +26,10 @@ const MenuTitreCode = ({codes, id}) => {
       </div>
       <div className="menuTitreCode-cadre">
         {newList.map((code) => (
-        <div className="cadre" key={code.id}>
-          <span className="cadre-color" style={{background: `${code.category.color}`}}></span>
-          <h1 className="cadre-titre">{code.titre}</h1>
-          <p className="cadre-description">{code.description} </p>
+        <div className="cadre" data-my-id={code.id} key={code.id} onClick={clicTitle}>
+          <span data-my-id={code.id} className="cadre-color" style={{background: `${code.category.color}`}}></span>
+          <h1 data-my-id={code.id} className="cadre-titre">{code.titre}</h1>
+          <p data-my-id={code.id} className="cadre-description">{code.description} </p>
         </div>
         ))}
       </div>

@@ -18,43 +18,43 @@ const initialState = {
   },
   {
     id: 2,
-    name: 'JS',
+    name: 'javascript',
     image: js,
     color: '#ffff00'
   },
   {
     id: 3,
-    name: 'PHP',
+    name: 'php',
     image: php,
     color: '#8e62f9'
   },
   {
     id: 4,
-    name: 'REACT',
+    name: 'react',
     image: react,
     color: '#71dbe0'
   },
   {
     id: 5,
-    name: 'SQL',
+    name: 'sql',
     image: '',
     color: '#313f88'
   },
   {
     id: 6,
-    name: 'CSS3',
+    name: 'css',
     image: css,
     color: '#238f94'
   },
   {
     id: 7,
-    name: 'HTML',
+    name: 'html',
     image: html,
     color: '#37ec7f'
   },
   {
     id: 8,
-    name: 'PYTHON',
+    name: 'python',
     image: python,
     color: '#4f53bd'
   }

@@ -1,21 +1,16 @@
 import { connect } from 'react-redux';
 import MenuTitreCode from '../../components/MenuTitreCode';
+import { saveId } from '../../actions';
 
 const mapStateToProps = (state, ownProps) => ({
   codes: state.MenuTitreCode.codes,
   id: state.leftMenu.id
 });
-const mapDispatchToProps = {}
-/* const mapDispatchToProps = (dispatch, ownProps) => ({
-  addSkill: (id,name,image,color) => {
-    dispatch(addSkill(id,name,image,color));
-  },
-  saveSkill: (id,name,image,color) => {
-    dispatch(saveSkill(id,name,image,color));
-  },
-  modifySkill: (id,name,image,color) => {
-    dispatch(modifySkill(id,name,image,color));
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  saveId: (id) => {
+    dispatch(saveId(id));
   }
-}); */
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(MenuTitreCode)

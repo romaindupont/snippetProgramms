@@ -1,3 +1,5 @@
+import { SAVE_ID } from '../actions';
+
 const initialState = {
   codes : [
    {
@@ -7,7 +9,7 @@ const initialState = {
     category: 
       {
       id: 6,
-      name: 'CSS3',
+      name: 'css',
       color: '#238f94'
       },
     code :".cadre {<br>width: 95%;<br>height: 100px;<br>border: 4px solid var(--theme-page-background-hover);<br>margin: 0 auto;<br>position: relative;<br>border-radius: 5px;<br>cursor: pointer;<br>margin-bottom: 0.5rem;<br>display: flex;<br>flex-direction: column;<br>&:hover {<br>border: 1px solid var(--theme-page-background);<br>}<br>&:hover > .cadre-color {<br>width: 100%;<br>z-index: 1;<br>}<br>&-color {<br>height: 100%;<br>display: block;<br>width: 10px;<br>border: none;<br>border-radius: 10px;<br>position: absolute;<br>left: -5px;<br>transition: width 500ms ease-in-out;<br>}<br>&-titre {<br>margin: 0;<br>font-size: 1rem;<br>text-align: center;<br>z-index: 3;<br>}<br>&-description {<br>margin-left: 1rem;<br>font-size: 0.8rem;<br>z-index: 3;<br>}}"
@@ -19,10 +21,10 @@ const initialState = {
     category: 
       {
       id: 6,
-      name: 'CSS3',
+      name: 'css',
       color: '#238f94'
       },
-      code :""
+      code :".cadre {\nwidth: 95%;\nheight: 100px;\nborder: 4px solid var(--theme-page-background-hover);\n}"
    },
    {
     id: 3,
@@ -31,7 +33,7 @@ const initialState = {
     category: 
       {
       id: 2,
-      name: 'js',
+      name: 'javascript',
       color: '#ffff00'
       },
     code :""
@@ -43,7 +45,7 @@ const initialState = {
     category: 
       {
       id: 6,
-      name: 'CSS3',
+      name: 'css',
       color: '#238f94'
       },
     code :""
@@ -55,7 +57,7 @@ const initialState = {
     category: 
       {
       id: 6,
-      name: 'CSS3',
+      name: 'css',
       color: '#238f94'
       },
     code :""
@@ -67,7 +69,7 @@ const initialState = {
     category: 
       {
       id: 5,
-      name: 'SQL',
+      name: 'sql',
       color: '#313f88'
       },
     code :""
@@ -79,7 +81,7 @@ const initialState = {
     category: 
       {
       id: 7,
-      name: 'HTML',
+      name: 'html',
       color: '#37ec7f'
       },
     code :""
@@ -95,6 +97,11 @@ const initialState = {
  
  const reducer = (state = initialState, action = {}) => {
    switch (action.type) {
+     case SAVE_ID:
+       return {
+         ...state,
+         id: action.id
+       }
      default:
        return state;
    }

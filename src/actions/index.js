@@ -37,3 +37,9 @@ export const modifySkill = (id, name, image, color) => ({
   image,
   color
 });
+
+export const SAVE_ID = 'SAVE_ID';
+export const saveId = (id) => ({
+  type: SAVE_ID,
+  id
+});

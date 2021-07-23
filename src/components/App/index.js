@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import LeftMenu from '../LeftMenu';
 import MenuTitreCode from '../../containers/MenuTitreCode';
-import VisualisationCode from '../VisualisationCode';
+import VisualisationCode from '../../containers/VisualisationCode';
 import './style.scss';
 import '../../styles/theme.scss';
 import AddPopup from '../../containers/LefMenu/AddPopup';
