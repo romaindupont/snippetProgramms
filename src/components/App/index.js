@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import LeftMenu from '../LeftMenu';
 import MenuTitreCode from '../../containers/MenuTitreCode';
+import VisualisationCode from '../VisualisationCode';
 import './style.scss';
 import '../../styles/theme.scss';
 import AddPopup from '../../containers/LefMenu/AddPopup';
@@ -24,6 +25,7 @@ function App() {
       <div className="monApp">
         <LeftMenu openWindow={openWindow} setOpenWindow={setOpenWindow} setOpenModifyPopup={setOpenModifyPopup} />
         <MenuTitreCode />
+        <VisualisationCode />
       </div>
       {openWindow && (<AddPopup setOpenWindow={setOpenWindow}/>)}
       {openModifyPopup && (<ModifyPopup setOpenModifyPopup={setOpenModifyPopup}/>)}
