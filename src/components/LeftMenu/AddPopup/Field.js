@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Field = ({type, placeholder, name, currentValue, changeValue, value}) => {
+const Field = ({type, placeholder, name, currentValue, changeValue}) => {
   return (
       <div className={`addPopup-${name}`}>
         <label className={`addPopup-${name}-label`}>{name}</label>

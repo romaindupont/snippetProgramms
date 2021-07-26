@@ -43,3 +43,27 @@ export const saveId = (id) => ({
   type: SAVE_ID,
   id
 });
+
+export const CHANGE_CODE = 'CHANGE_CODE';
+export const changeCode = (id, titre, description, category, code, name, color) => ({
+  type: CHANGE_CODE,
+  id,
+  titre,
+  description,
+  category,
+  code,
+  name,
+  color
+});
+
+export const ADD_CODE = 'ADD_CODE';
+export const addCode = (id, titre, description, category, code, name, color) => ({
+  type: ADD_CODE,
+  id,
+  titre,
+  description,
+  category,
+  code,
+  name,
+  color
+});

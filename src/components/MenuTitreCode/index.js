@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './style.scss';
 
-const MenuTitreCode = ({codes, id, saveId}) => {
+const MenuTitreCode = ({codes, id, saveId, setOpenNewCode}) => {
   const [ searchTerm, setSearchTerm ] = useState('');
   const inputWord = (e) => {
     setSearchTerm(e.target.value);
@@ -15,8 +15,8 @@ const MenuTitreCode = ({codes, id, saveId}) => {
   }
   const clicTitle = (e) => {
     e.preventDefault();
-    saveId(e.target.getAttribute('data-my-id'))
-    
+    saveId(e.target.getAttribute('data-my-id'));
+    setOpenNewCode(false)
   }
   return (
     <div className="menuTitreCode">

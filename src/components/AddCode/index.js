@@ -1,18 +1,10 @@
 import React, { useState } from 'react';
 import Highlight, { defaultProps } from "prism-react-renderer";
-import './style.scss';
 import classNames from 'classnames';
 
-const VisualisationCode = ({codes, id, skill, changeValue, changeCode}) => {
+const AddCode = ({codes, id, skill, changeValue, addCode, currentValue, setOpenNewCode}) => {
   const [ textAreaOpen, setTextAreaOpen ] = useState(false);
-/*   let ClicList = codes;
-  if (id === '') {
-
-  }
-  else { */
-    const ClicList = codes.filter((code) => parseInt(code.id) === parseInt(id));
-
-/*   } */
+  let newId='';
   const tabAction = (e) => {
     if (e.key === 'Tab') {
       e.preventDefault();
@@ -28,11 +20,12 @@ const VisualisationCode = ({codes, id, skill, changeValue, changeCode}) => {
   const handleBlur = () => {
     setTextAreaOpen(!textAreaOpen);
   }
-  const changeInformation = (e) => {
+  const register = (e) => {
     e.preventDefault();
     const changeSkill = skill.filter((skills) => skills.id === parseInt(e.target.form[3].value));
-    changeCode(
-      parseInt(id),
+    newId = codes.length + 1;
+    addCode(
+      parseInt(newId),
       e.target.form[0].value,
       e.target.form[1].value,
       e.target.form[3].value,
@@ -40,18 +33,18 @@ const VisualisationCode = ({codes, id, skill, changeValue, changeCode}) => {
       changeSkill[0].name,
       changeSkill[0].color
     );
+    setOpenNewCode(false)
   }
 
   return (
     <>
-    {ClicList.map((list) => (
-      <form type="submit" className="visualisationCode" key={list.id} >
+      <form type="submit" className="visualisationCode" >
         <label className="visualisationCode-Label-Titre">Titre
         <input
           className="visualisationCode-titre"
           type="text"
           name="titre"
-          defaultValue={list.titre}
+          value={currentValue}
           onChange={(e) => { 
             changeValue(e.target.value, e.target.name);
           }}
@@ -62,7 +55,7 @@ const VisualisationCode = ({codes, id, skill, changeValue, changeCode}) => {
           className="visualisationCode-description"
           name="description"
           type="text"
-          defaultValue={list.description}
+          value={currentValue}
           onChange={(e) => {
             changeValue(e.target.value, e.target.name);
           }}
@@ -72,7 +65,7 @@ const VisualisationCode = ({codes, id, skill, changeValue, changeCode}) => {
         <input
           className="visualisationCode-Color"
           type="color"
-          value={list.category.color}
+          value={currentValue || '#222222'}
           readOnly
         />
         </label>
@@ -81,7 +74,7 @@ const VisualisationCode = ({codes, id, skill, changeValue, changeCode}) => {
           name="skill"
           className="skill"
           onChange={(e)=> changeValue(e.target.value)}
-          defaultValue={list.category.id}
+          value={currentValue}
         >
           {skill.map((skills, i) => (
             <option value={skills.id} key={i}>{skills.name}</option>
@@ -92,12 +85,12 @@ const VisualisationCode = ({codes, id, skill, changeValue, changeCode}) => {
           <textarea
             spellCheck="false"
             onBlur={handleBlur}
-            defaultValue={list.code}
+            value={currentValue}
             onKeyDown={tabAction}
             onChange={(e)=> changeValue(e.target.value)}
             className={classNames("textarea", {"textarea--open": textAreaOpen})}
           />
-          <Highlight {...defaultProps} code={list.code} language={list.category.name} onClick={handleClick}>
+          <Highlight {...defaultProps} code={''} language={''} onClick={handleClick}>
             {({ className, style, tokens, getLineProps, getTokenProps }) => (
               <pre className={`${className} ${classNames("preClass", {"preClass--close":textAreaOpen})}`} style={style} onClick={handleClick}>
                 {tokens.map((line, i) => (
@@ -111,11 +104,10 @@ const VisualisationCode = ({codes, id, skill, changeValue, changeCode}) => {
             )}
           </Highlight>
         </label>
-        <button className="visualisationCode-button" type="submit" onClick={changeInformation}>Modify</button>
+        <button className="visualisationCode-button" type="submit" onClick={register}>New</button>
       </form>
-      ))}
       </>
   )  
 }
 
-export default VisualisationCode;
+export default AddCode;

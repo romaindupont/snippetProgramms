@@ -63,7 +63,6 @@ const initialState = {
  name:'',
  image:'',
  color:''
-
 };
 
 const reducer = (state = initialState, action = {}) => {
