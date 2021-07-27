@@ -1,30 +1,39 @@
 import axios from 'axios';
 
-/* import { } from '../actions'; */
-
-axios.defaults.baseURL = '';
+import { FETCH_SKILLS, SaveDbSkills, FETCH_CODES } from '../actions';
 
 const ajax = (store) => (next) => (action) => {
   switch (action.type) {
-    /* case LOGIN:
-    {
-      const state = store.getState();
-      axios.post('/signin', {
-        email: state.user.email,
-        password: state.user.password,
-        id_user: state.user.id_user,
-        level: state.user.level,
-        avatar_id: state.user.avatar_id,
-      }, {
-        baseURL: '',
-      })
-        .then((response) => {
-          // action à créer
-        })
-        .catch((error) => {
-        });
-      break;
-    } */
+    case FETCH_SKILLS:
+      {
+        axios.get('/category',
+          {
+            baseURL: 'http://localhost:5000/',
+          })
+          .then((response) => {
+            console.log(response)
+            store.dispatch(SaveDbSkills(response.data.categoryList));
+          })
+          .catch((error) => {
+            console.error('Error', error);
+          });
+        break;
+      }
+    case FETCH_CODES:
+      {
+        axios.get('/codes',
+          {
+            baseURL: 'http://localhost:5000/',
+          })
+          .then((response) => {
+            console.log(response.data.codesList.replaceAll("\\", ""))
+            /* store.dispatch(SaveDbSkills(response.data.categoryList)); */
+          })
+          .catch((error) => {
+            console.error('Error', error);
+          });
+        break;
+      }
     default:
       next(action);
   }

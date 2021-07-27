@@ -3,6 +3,7 @@ import './style.scss';
 
 
 const ContainerLangue = ({ AllLanguage, saveSkill }) => {
+  console.log(AllLanguage)
   const skillClick = (e) => {
     e.preventDefault();
     saveSkill(

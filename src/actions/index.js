@@ -67,3 +67,63 @@ export const addCode = (id, titre, description, category, code, name, color) => 
   name,
   color
 });
+
+
+export const FETCH_SKILLS = 'FETCH_SKILLS';
+export const fetchSkills = () => ({
+  type: FETCH_SKILLS
+});
+
+export const SAVE_DB_SKILLS = 'SAVE_DB_SKILLS';
+export const SaveDbSkills = (categoryList) => ({
+  type: SAVE_DB_SKILLS,
+  categoryList
+});
+
+export const FETCH_CODES = 'FETCH_CODES';
+export const fetchCodes = () => ({
+  type: FETCH_CODES
+});
+
+export const ADD_DB_SKILL = 'ADD_DB_SKILL';
+export const addDbSkill = (id, name, image, color) => ({
+  type: ADD_DB_SKILL,
+  id,
+  name,
+  image,
+  color
+});
+
+export const MODIFY_DB_SKILL = 'MODIFY_DB_SKILL';
+export const modifyDbSkill = (id, name, image, color) => ({
+  type: MODIFY_DB_SKILL,
+  id,
+  name,
+  image,
+  color
+});
+
+export const ADD_DB_CODE = 'ADD_DB_CODE';
+export const addDbCode = (id, titre, description, category, code, name, color) => ({
+  type: ADD_DB_CODE,
+  id,
+  titre,
+  description,
+  category,
+  code,
+  name,
+  color
+});
+
+
+export const CHANGE_DB_CODE = 'CHANGE_DB_CODE';
+export const changeDbCode = (id, titre, description, category, code, name, color) => ({
+  type: CHANGE_DB_CODE,
+  id,
+  titre,
+  description,
+  category,
+  code,
+  name,
+  color
+});

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import LeftMenu from '../LeftMenu';
 import MenuTitreCode from '../../containers/MenuTitreCode';
 import VisualisationCode from '../../containers/VisualisationCode';
@@ -10,7 +10,8 @@ import ModifyPopup from '../../containers/LefMenu/ModifyPopup';
 import {ReactComponent as Ligth} from '../../assets/images/newligth.svg';
 import { lightOrNot } from '../../Utils/lightOrNot';
 
-function App() {
+
+function App({fetchSkills, fetchCodes}) {
   const [theme, setTheme] = useState('light');
   const [ openWindow, setOpenWindow ] = useState(false);
   const [ openModifyPopup, setOpenModifyPopup ] = useState(false);
@@ -18,6 +19,10 @@ function App() {
   const changeSize = () => {
     lightOrNot(setTheme);
   }
+  useEffect(() => {
+    fetchSkills();
+    fetchCodes();
+  }, [fetchSkills,fetchCodes]);
   return (
     <div className={`App ${theme}`}>
       <header>

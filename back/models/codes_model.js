@@ -28,7 +28,7 @@ const dataCodes = {
     return result; 
   },
   getCodes: async () => {
-    const sql =`SELECT codes.id, codes.titre, codes.description, codes.code, json_object('id', i.id, 'name', i.nom, 'color', i.color )category FROM codes, skill AS i WHERE codes.skill_id = i.id`;
+    const sql =`SELECT codes.id, codes.titre, codes.description, codes.code, json_object('id', i.id, 'name', i.name, 'color', i.color )category FROM codes, skill AS i WHERE codes.skill_id = i.id`;
     const result = await db.db.prepare(sql).all(); 
     return result; 
     },
