@@ -8,6 +8,7 @@ dotenv.config();
 
 const categoryRouter = require('./routers/category');
 
+const codesRouter = require('./routers/codes');
 /* const articlesRouter = require('./routers/articles');
 const planningRouter = require('./routers/planning');
 const workingDayRouter = require('./routers/workingDay');
@@ -30,6 +31,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/', categoryRouter);
+app.use('/', codesRouter);
 /* app.use('/', articlesRouter);
 app.use('/', planningRouter);
 app.use('/', workingDayRouter);

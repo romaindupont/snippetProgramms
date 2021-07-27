@@ -1,13 +1,13 @@
-const category_model = require('../models/category_model');
+const codes_model = require('../models/codes_model');
 
-const categoryController = {
+const codesController = {
   add: async (req, res) => {
     try {
-      const newSkill = await category_model.dataCategory.addCategory(req.body);
+      const newSkill = await codes_model.dataCodes.addCodes(req.body);
       const newId = newSkill.lastInsertRowid
-      const skillJustCreate = await category_model.dataCategory.getOneCategory(newId);
+      const skillJustCreate = await codes_model.dataCodes.getOneCodes(newId);
       return res.status(201).json({
-          message: "Votre skill est enregistré",
+          message: "Votre code est enregistré",
           skillJustCreate
       });
     } catch (error) {
@@ -17,9 +17,9 @@ const categoryController = {
   },
   findAll: async (req, res) => {
     try {
-      const categoryList = await category_model.dataCategory.getCategory();
+      const codesList = await codes_model.dataCodes.getCodes();
       return res.status(201).json({
-        categoryList
+        codesList
       });
     } catch (error) {
       console.log(error);
@@ -28,9 +28,9 @@ const categoryController = {
   },  
   delete: async(req,res) => {
     try {
-      await category_model.dataCategory.deleteCategory(req.params.id);
+      await codes_model.dataCodes.deleteCodes(req.params.id);
       return res.status(201).json({
-        message: "Votre Skill est supprimé"
+        message: "Votre code est supprimé"
       });
 
     } catch (error) {
@@ -40,9 +40,9 @@ const categoryController = {
   },
   update: async(req,res) => {
     try {
-      await category_model.dataCategory.updateCategory(req.body, req.params.id);
+      await codes_model.dataCodes.updateCodes(req.body, req.params.id);
       return res.status(201).json({
-        message: "Votre skill est mis à jour"
+        message: "Votre code est mis à jour"
       });
     } catch (error) {
       console.log(error);
@@ -51,4 +51,4 @@ const categoryController = {
   }
 };
 
-module.exports = categoryController;
+module.exports = codesController;

@@ -1,4 +1,4 @@
-const db = require('./data/database');
+const db = require('../data/database');
 
 class Category {
 
@@ -18,34 +18,39 @@ class Category {
   }
 }
 const dataCategory = {
-  addCategory: async (id, body) => {
-    const sql = 'INSERT INTO category(id, nom, image, color) VALUES ($1, $2, $3, $4) RETURNING *';
+  addCategory: async (body) => {
+    const sql = 'INSERT INTO skill(nom, image, color) VALUES ($1, $2, $3) RETURNING *';
     const { nom, image, color } = body;
-    const result = await db.run(sql, [ id, nom, image, color ]);
-    const categoryAdd = new Category(result.rows[0]);
-    return categoryAdd;
+    const result = await db.db.prepare(sql).run({1:nom, 2:image, 3:color});
+    return result; 
   },
   lastId: async () => {
-    const sql ='SELECT MAX(id) FROM category';
-    const result = await db.run(sql);
+    const sql ='SELECT MAX(id) FROM skill';
+    const result = await db.db.prepare(sql).get();
     const id = result.rows[0];
+    console.log(id)
     return id;
   },
-  getCategory: async (body) => {
-    const sql ='SELECT * FROM category';
-    const result = await db.run(sql);
-    return result.rows[0];
-  },
+  getCategory: async () => {
+    const sql ='SELECT * FROM skill';
+    const result = await db.db.prepare(sql).all(); 
+    return result; 
+    },
+  getOneCategory: async (id) => {
+    const sql ='SELECT * FROM skill WHERE id=?';
+    const result = await db.db.prepare(sql).get(id); 
+    return result; 
+    },    
   deleteCategory: async (id) => {
-    const sql = 'DELETE FROM category WHERE id=$1';
-    const result = await db.run(sql, [ id ]);
-    return result.rows[0];
+    const sql = 'DELETE FROM skill WHERE id=?';
+    const result = await db.db.prepare(sql).run(id);
+    return result;
   },
   updateCategory: async (body, id) => {
-    const sql = 'UPDATE category SET nom=$1, image=$2, color=$3 WHERE id=$4';
+    const sql = 'UPDATE skill SET nom=$1, image=$2, color=$3 WHERE id=$4';
     const { nom, image, color } = body;
-    const result = await db.run(sql, [ nom, image, color, id ]);
-    return result.rows;
+    const result = await db.db.prepare(sql).run({1:nom, 2:image, 3:color, 4:id});
+    return result;
   }
 };
 
