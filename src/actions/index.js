@@ -85,6 +85,12 @@ export const fetchCodes = () => ({
   type: FETCH_CODES
 });
 
+export const SAVE_DB_CODES = 'SAVE_DB_CODES';
+export const SaveDbCodes = (codesList) => ({
+  type: SAVE_DB_CODES,
+  codesList
+});
+
 export const ADD_DB_SKILL = 'ADD_DB_SKILL';
 export const addDbSkill = (id, name, image, color) => ({
   type: ADD_DB_SKILL,

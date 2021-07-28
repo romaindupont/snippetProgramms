@@ -1,4 +1,4 @@
-import { SAVE_ID, CHANGE_CODE, ADD_CODE } from '../actions';
+import { SAVE_ID, CHANGE_CODE, ADD_CODE, SAVE_DB_CODES } from '../actions';
 
 const initialState = {
   codes : [
@@ -91,8 +91,8 @@ const initialState = {
   titre: '',
   description: '',
   category:'',
-  code: ''
- 
+  code: '',
+  wait: true
  };
  
  const reducer = (state = initialState, action = {}) => {
@@ -146,6 +146,12 @@ const initialState = {
         description: '',
         category:'',
         code: ''
+      }
+    case SAVE_DB_CODES:
+      return {
+        ...state,
+        codes: action.codesList,
+        wait: false
       }
     default:
       return state;

@@ -18,6 +18,7 @@ const codesController = {
   findAll: async (req, res) => {
     try {
       const codesList = await codes_model.dataCodes.getCodes();
+      console.log(codesList)
       return res.status(201).json({
         codesList
       });
