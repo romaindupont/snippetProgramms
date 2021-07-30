@@ -2,8 +2,8 @@ import { SAVE_ID, CHANGE_CODE, ADD_CODE, SAVE_DB_CODES } from '../actions';
 
 const initialState = {
   codes : [
-   {
-    id: 1,
+  /*  {
+    id: 9,
     titre: 'faire un rond',
     description: "voilà comment faire un rond",
     category: 
@@ -15,7 +15,7 @@ const initialState = {
     code :".cadre {<br>width: 95%;<br>height: 100px;<br>border: 4px solid var(--theme-page-background-hover);<br>margin: 0 auto;<br>position: relative;<br>border-radius: 5px;<br>cursor: pointer;<br>margin-bottom: 0.5rem;<br>display: flex;<br>flex-direction: column;<br>&:hover {<br>border: 1px solid var(--theme-page-background);<br>}<br>&:hover > .cadre-color {<br>width: 100%;<br>z-index: 1;<br>}<br>&-color {<br>height: 100%;<br>display: block;<br>width: 10px;<br>border: none;<br>border-radius: 10px;<br>position: absolute;<br>left: -5px;<br>transition: width 500ms ease-in-out;<br>}<br>&-titre {<br>margin: 0;<br>font-size: 1rem;<br>text-align: center;<br>z-index: 3;<br>}<br>&-description {<br>margin-left: 1rem;<br>font-size: 0.8rem;<br>z-index: 3;<br>}}"
    },
    {
-    id: 2,
+    id: 10,
     titre: 'faire un triangle',
     description: "voilà comment faire un triangle",
     category: 
@@ -85,8 +85,9 @@ const initialState = {
       color: '#37ec7f'
       },
     code :""
-   }
+   } */
   ],
+  /* codes: [], */
   id: '',
   titre: '',
   description: '',
@@ -150,7 +151,11 @@ const initialState = {
     case SAVE_DB_CODES:
       return {
         ...state,
-        codes: action.codesList,
+        codes: [
+          ...state.codes, 
+          action.codesList
+          
+        ], 
         wait: false
       }
     default:

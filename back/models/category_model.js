@@ -19,7 +19,7 @@ class Category {
 }
 const dataCategory = {
   addCategory: async (body) => {
-    const sql = 'INSERT INTO skill(nom, image, color) VALUES ($1, $2, $3) RETURNING *';
+    const sql = 'INSERT INTO skill(name, image, color) VALUES ($1, $2, $3) RETURNING *';
     const { name, image, color } = body;
     const result = await db.db.prepare(sql).run({1:name, 2:image, 3:color});
     return result; 

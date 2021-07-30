@@ -2,13 +2,13 @@ import React from 'react';
 import Field from '../../../containers/LefMenu/AddPopup/Field';
 import './style.scss';
 
-const AddPopup = ({setOpenWindow, addSkill}) => {
+const AddPopup = ({setOpenWindow, addDbSkill}) => {
   const closeClick = () => {
     setOpenWindow(false);
   }
   const handleSubmit = (e) => {
     e.preventDefault();
-    addSkill(8, e.target[1].value, e.target[0].value, e.target[2].value)
+    addDbSkill(e.target[1].value, e.target[0].value, e.target[2].value)
     setOpenWindow(false)
   }
   return (
@@ -30,7 +30,6 @@ const AddPopup = ({setOpenWindow, addSkill}) => {
           placeholder=""
           name="color"
         />
-
         <button type="submit" className="addPopup-button">Save</button>
       </form>
     </div>

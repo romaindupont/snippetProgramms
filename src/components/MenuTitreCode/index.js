@@ -1,22 +1,20 @@
 import React, { useState } from 'react';
 import './style.scss';
 
-const MenuTitreCode = ({codes, id, saveId, setOpenNewCode, wait}) => {
+const MenuTitreCode = ({codes, id, saveId, setOpenNewCode, wait,setOpenViewCode}) => {
   const [ searchTerm, setSearchTerm ] = useState('');
-  
   const inputWord = (e) => {
     setSearchTerm(e.target.value);
   }
+  
   let newList = codes;
   if (parseInt(id) === 1) {
     newList = codes.filter((code) => code.titre.includes(searchTerm) || code.description.includes(searchTerm));
-    /* newList = JSON.parse(newList[0].category) */
-    /* console.log(JSON.parse(newList[0].category)) */
   }
   else {
-    console.log(codes)
     newList = codes.filter((code) => parseInt(code.category.id) === parseInt(id) && (code.titre.includes(searchTerm) || code.description.includes(searchTerm)));
   }
+
   const clicTitle = (e) => {
     e.preventDefault();
     saveId(e.target.getAttribute('data-my-id'));
@@ -32,7 +30,7 @@ const MenuTitreCode = ({codes, id, saveId, setOpenNewCode, wait}) => {
         {wait && (<div> waiting...</div>)}
         {!wait && (newList.map((code) => (
         <div className="cadre" data-my-id={code.id} key={code.id} onClick={clicTitle}>
-          <span data-my-id={code.id} className="cadre-color" data-my-color={code.category} style={{background: `${code.category.color}`}}></span>
+          <span data-my-id={code.id} className="cadre-color" style={{background: `${code.category.color}`}}></span>
           <h1 data-my-id={code.id} className="cadre-titre">{code.titre}</h1>
           <p data-my-id={code.id} className="cadre-description">{code.description}</p>
         </div>

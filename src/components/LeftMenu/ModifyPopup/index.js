@@ -2,7 +2,7 @@ import React from 'react';
 import Field from '../../../containers/LefMenu/AddPopup/Field';
 import './style.scss';
 
-const ModifyPopup = ({setOpenModifyPopup, AllLanguage, saveSkill, modifySkill}) => {
+const ModifyPopup = ({setOpenModifyPopup, AllLanguage, saveSkill, modifyDbSkill, saveId}) => {
   const closeClick = () => {
     setOpenModifyPopup(false);
   }
@@ -13,7 +13,8 @@ const ModifyPopup = ({setOpenModifyPopup, AllLanguage, saveSkill, modifySkill}) 
   }
   const handleSubmit = (e) => {
     e.preventDefault();
-    modifySkill(parseInt(e.target[0].value), e.target[2].value, e.target[1].value, e.target[3].value);
+    saveId(parseInt(e.target[0].value))
+    modifyDbSkill(e.target[2].value, e.target[1].value, e.target[3].value);
     setOpenModifyPopup(false)
   }
   return (

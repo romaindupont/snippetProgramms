@@ -32,7 +32,7 @@ function App({fetchSkills, fetchCodes}) {
       <div className="monApp">
         <LeftMenu openWindow={openWindow} setOpenWindow={setOpenWindow} setOpenModifyPopup={setOpenModifyPopup} setOpenNewCode={setOpenNewCode}/>
         <MenuTitreCode setOpenNewCode={setOpenNewCode}/>
-        <VisualisationCode/>
+        <VisualisationCode />
         {openNewCode && (<AddCode setOpenNewCode={setOpenNewCode}/>)}
       </div>
       {openWindow && (<AddPopup setOpenWindow={setOpenWindow}/>)}
