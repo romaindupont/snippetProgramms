@@ -29,24 +29,7 @@ const dataCodes = {
   },
   getCodes: async () => {
     const sql =`SELECT codes.id, codes.titre, codes.description, codes.code, (SELECT json_object('id', id, 'name', name, 'color', color ) FROM skill WHERE codes.skill_id = skill.id) AS category FROM codes`;
-    /* SELECT codes.id, codes.titre, codes.description, codes.code, json_object('id', i.id, 'name', i.name, 'color', i.color ) category FROM codes, skill AS i WHERE codes.skill_id = i.id */
     let result = await db.db.prepare(sql).all(); 
- 
-    
-    /* const newSql = `SELECT json_object('id', id, 'name', name, 'color', color ) category FROM skill;`
-    newSql = await db.db.prepare(sql).all(); 
-    let modifyToJson = JSON.parse(newSql)
-    console.log(modifyToJson)
-    let table = []; */
-    /* console.log(result.length) */
-    
- /*    for (let i = 0 ; i < result.length ; i++) {
-      result = table.push(JSON.parse(result[i].category),result[i])
-
-    } */
-    
-    /* const str = JSON.stringify(c)
-    const result = str.replace(/\\/g, '') */
     return result; 
     },
   getOneCodes: async (id) => {

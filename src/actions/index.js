@@ -117,13 +117,11 @@ export const addDbCode = (titre, description,code, skill_id) => ({
 
 
 export const CHANGE_DB_CODE = 'CHANGE_DB_CODE';
-export const changeDbCode = (id, titre, description, category, code, name, color) => ({
+export const changeDbCode = ( id, titre, description,code, skill_id) => ({
   type: CHANGE_DB_CODE,
   id,
   titre,
   description,
-  category,
   code,
-  name,
-  color
+  skill_id
 });

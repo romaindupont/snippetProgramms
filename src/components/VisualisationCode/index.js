@@ -3,16 +3,10 @@ import Highlight, { defaultProps } from "prism-react-renderer";
 import './style.scss';
 import classNames from 'classnames';
 
-const VisualisationCode = ({codes, id, skill, changeValue, changeCode}) => {
+const VisualisationCode = ({codes, id, skill, changeValue, changeDbCode}) => {
   const [ textAreaOpen, setTextAreaOpen ] = useState(false);
-/*   let ClicList = codes;
-  if (id === '') {
+  const ClicList = codes.filter((code) => parseInt(code.id) === parseInt(id));
 
-  }
-  else { */
-    const ClicList = codes.filter((code) => parseInt(code.id) === parseInt(id));
-
-/*   } */
   const tabAction = (e) => {
     if (e.key === 'Tab') {
       e.preventDefault();
@@ -30,16 +24,13 @@ const VisualisationCode = ({codes, id, skill, changeValue, changeCode}) => {
   }
   const changeInformation = (e) => {
     e.preventDefault();
-    const changeSkill = skill.filter((skills) => skills.id === parseInt(e.target.form[3].value));
-    changeCode(
+    changeDbCode( 
       parseInt(id),
       e.target.form[0].value,
       e.target.form[1].value,
-      e.target.form[3].value,
       e.target.form[4].value,
-      changeSkill[0].name,
-      changeSkill[0].color
-    );
+      parseInt(e.target.form[3].value)
+    )
   }
 
   return (

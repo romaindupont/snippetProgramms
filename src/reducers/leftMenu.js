@@ -93,6 +93,7 @@ const reducer = (state = initialState, action = {}) => {
           image: action.image,
           color: action.color
         }
+        
       case MODIFY_SKILL:
         return {
           ...state,

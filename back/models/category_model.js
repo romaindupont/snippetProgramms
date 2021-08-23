@@ -31,7 +31,7 @@ const dataCategory = {
     return id;
   },
   getCategory: async () => {
-    const sql ='SELECT * FROM skill';
+    const sql ='SELECT skill.id as id, skill.color, skill.highlight_id, skill.image, skill.name, highlight.id as idHighlight, highlight.highName FROM skill INNER JOIN highlight WHERE skill.highlight_id = highlight.id';
     const result = await db.db.prepare(sql).all(); 
     return result; 
     },

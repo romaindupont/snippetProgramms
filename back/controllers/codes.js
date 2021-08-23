@@ -40,9 +40,10 @@ const codesController = {
   },
   update: async(req,res) => {
     try {
-      await codes_model.dataCodes.updateCodes(req.body, req.params.id);
+      const codeChange = await codes_model.dataCodes.updateCodes(req.body, req.params.id);
       return res.status(201).json({
-        message: "Votre code est mis à jour"
+        message: "Votre code est mis à jour",
+        codeChange
       });
     } catch (error) {
       console.log(error);
