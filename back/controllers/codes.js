@@ -3,12 +3,12 @@ const codes_model = require('../models/codes_model');
 const codesController = {
   add: async (req, res) => {
     try {
-      const newSkill = await codes_model.dataCodes.addCodes(req.body);
-      const newId = newSkill.lastInsertRowid
-      const skillJustCreate = await codes_model.dataCodes.getOneCodes(newId);
+      const newCode = await codes_model.dataCodes.addCodes(req.body);
+      const newId = newCode.lastInsertRowid
+      const codeJustCreate = await codes_model.dataCodes.getOneCodes(newId);
       return res.status(201).json({
           message: "Votre code est enregistré",
-          skillJustCreate
+          codeJustCreate
       });
     } catch (error) {
       console.log(error);
@@ -40,9 +40,10 @@ const codesController = {
   },
   update: async(req,res) => {
     try {
-      await codes_model.dataCodes.updateCodes(req.body, req.params.id);
+      const codeChange = await codes_model.dataCodes.updateCodes(req.body, req.params.id);
       return res.status(201).json({
-        message: "Votre code est mis à jour"
+        message: "Votre code est mis à jour",
+        codeChange
       });
     } catch (error) {
       console.log(error);

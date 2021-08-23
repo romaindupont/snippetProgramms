@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './style.scss';
 
-const MenuTitreCode = ({codes, id, saveId, setOpenNewCode}) => {
+const MenuTitreCode = ({codes, id, saveId, setOpenNewCode, wait}) => {
   const [ searchTerm, setSearchTerm ] = useState('');
   const inputWord = (e) => {
     setSearchTerm(e.target.value);
@@ -16,7 +16,7 @@ const MenuTitreCode = ({codes, id, saveId, setOpenNewCode}) => {
   const clicTitle = (e) => {
     e.preventDefault();
     saveId(e.target.getAttribute('data-my-id'));
-    setOpenNewCode(false)
+    setOpenNewCode(false);
   }
   return (
     <div className="menuTitreCode">
@@ -25,13 +25,14 @@ const MenuTitreCode = ({codes, id, saveId, setOpenNewCode}) => {
           <input type="search" name="search" id="recherche" onChange={inputWord}/>
       </div>
       <div className="menuTitreCode-cadre">
-        {newList.map((code) => (
+        {wait && (<div> waiting...</div>)}
+        {!wait && (newList.map((code) => (
         <div className="cadre" data-my-id={code.id} key={code.id} onClick={clicTitle}>
           <span data-my-id={code.id} className="cadre-color" style={{background: `${code.category.color}`}}></span>
           <h1 data-my-id={code.id} className="cadre-titre">{code.titre}</h1>
-          <p data-my-id={code.id} className="cadre-description">{code.description} </p>
+          <p data-my-id={code.id} className="cadre-description">{code.description}</p>
         </div>
-        ))}
+         )))}
       </div>
     </div>
   )

@@ -6,7 +6,7 @@ import css from '../assets/images/css3.png';
 import html from '../assets/images/html5.png';
 import python from '../assets/images/python.png';
 import all from '../assets/images/all.svg';
-import { CHANGE_VALUE, ADD_SKILL, SAVE_SKILL, MODIFY_SKILL } from '../actions';
+import { CHANGE_VALUE, ADD_SKILL, SAVE_SKILL, MODIFY_SKILL, SAVE_DB_SKILLS } from '../actions';
 
 const initialState = {
  skill : [
@@ -93,6 +93,7 @@ const reducer = (state = initialState, action = {}) => {
           image: action.image,
           color: action.color
         }
+        
       case MODIFY_SKILL:
         return {
           ...state,
@@ -109,6 +110,12 @@ const reducer = (state = initialState, action = {}) => {
               return skills;
             }
           }),
+        }
+      case SAVE_DB_SKILLS:
+        return {
+          ...state,
+          skill : action.categoryList
+
         }
     default:
       return state;

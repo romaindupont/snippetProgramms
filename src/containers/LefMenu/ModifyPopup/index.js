@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ModifyPopup from '../../../components/LeftMenu/ModifyPopup';
-import { addSkill, saveSkill, modifySkill } from '../../../actions';
+import { addSkill, saveSkill, modifyDbSkill, saveId } from '../../../actions';
 
 const mapStateToProps = (state, ownProps) => ({
   currentValue: state.leftMenu[ownProps.name],
@@ -14,8 +14,11 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   saveSkill: (id,name,image,color) => {
     dispatch(saveSkill(id,name,image,color));
   },
-  modifySkill: (id,name,image,color) => {
-    dispatch(modifySkill(id,name,image,color));
+  modifyDbSkill: (name,image,color) => {
+    dispatch(modifyDbSkill(name,image,color));
+  },
+  saveId: (id) => {
+    dispatch(saveId(id));
   }
 });
 

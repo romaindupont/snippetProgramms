@@ -4,7 +4,8 @@ import { saveId } from '../../actions';
 
 const mapStateToProps = (state, ownProps) => ({
   codes: state.MenuTitreCode.codes,
-  id: state.leftMenu.id
+  id: state.leftMenu.id,
+  wait: state.MenuTitreCode.wait
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

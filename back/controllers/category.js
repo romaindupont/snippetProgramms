@@ -7,8 +7,8 @@ const categoryController = {
       const newId = newSkill.lastInsertRowid
       const skillJustCreate = await category_model.dataCategory.getOneCategory(newId);
       return res.status(201).json({
-          message: "Votre skill est enregistré",
-          skillJustCreate
+        message: "Votre skill est enregistré",
+        skillJustCreate
       });
     } catch (error) {
       console.log(error);
