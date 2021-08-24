@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import App from '../../components/App';
-import { fetchSkills, fetchCodes } from '../../actions';
+import { fetchSkills, fetchCodes, fetchHighlight } from '../../actions';
 
 const mapStateToProps = null;
 
@@ -10,6 +10,9 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
   fetchCodes: () => {
     dispatch(fetchCodes());
+  },
+  fetchHighlight: () => {
+    dispatch(fetchHighlight());
   }
 });
 

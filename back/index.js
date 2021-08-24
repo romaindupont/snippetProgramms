@@ -7,14 +7,8 @@ const db = require('./data/database');
 dotenv.config();
 
 const categoryRouter = require('./routers/category');
-
 const codesRouter = require('./routers/codes');
-/* const articlesRouter = require('./routers/articles');
-const planningRouter = require('./routers/planning');
-const workingDayRouter = require('./routers/workingDay');
-const machineRouter = require('./routers/machine');
-const valorisationRouter = require('./routers/valorisation');
-const settingsRouter = require('./routers/settings'); */
+const highlightRouter = require('./routers/highlight');
 
 app.use(express.json());
 app.use(cors());
@@ -32,12 +26,7 @@ app.get('/', (req, res) => {
 
 app.use('/', categoryRouter);
 app.use('/', codesRouter);
-/* app.use('/', articlesRouter);
-app.use('/', planningRouter);
-app.use('/', workingDayRouter);
-app.use('/', machineRouter);
-app.use('/', valorisationRouter);
-app.use('/', settingsRouter); */
+app.use('/', highlightRouter);
 
 // Error middleware
 app.use((err, req, res, next) => {

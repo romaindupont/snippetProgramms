@@ -88,7 +88,7 @@ const VisualisationCode = ({codes, id, skill, changeValue, changeDbCode}) => {
             onChange={(e)=> changeValue(e.target.value)}
             className={classNames("textarea", {"textarea--open": textAreaOpen})}
           />
-          <Highlight {...defaultProps} code={list.code} language={list.category.name} onClick={handleClick}>
+          <Highlight {...defaultProps} code={list.code} language={list.category.highlightName} onClick={handleClick}>
             {({ className, style, tokens, getLineProps, getTokenProps }) => (
               <pre className={`${className} ${classNames("preClass", {"preClass--close":textAreaOpen})}`} style={style} onClick={handleClick}>
                 {tokens.map((line, i) => (

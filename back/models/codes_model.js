@@ -28,7 +28,7 @@ const dataCodes = {
     return result; 
   },
   getCodes: async () => {
-    const sql =`SELECT codes.id, codes.titre, codes.description, codes.code, (SELECT json_object('id', id, 'name', name, 'color', color ) FROM skill WHERE codes.skill_id = skill.id) AS category FROM codes`;
+    const sql =`SELECT codes.id, codes.titre, codes.description, codes.code, (SELECT json_object('id', skill.id, 'name', name, 'color', color , 'highlightName', highlight.highName) FROM skill INNER JOIN highlight WHERE codes.skill_id = skill.id AND skill.highlight_id = highlight.id ) AS category FROM codes`;
     let result = await db.db.prepare(sql).all(); 
     return result; 
     },

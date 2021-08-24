@@ -7,8 +7,8 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  addDbSkill: (name,image,color) => {
-    dispatch(addDbSkill(name,image,color));
+  addDbSkill: (name,image,color,highlight_id) => {
+    dispatch(addDbSkill(name,image,color,highlight_id));
   }
 });
 

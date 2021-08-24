@@ -11,7 +11,7 @@ import {ReactComponent as Ligth} from '../../assets/images/newligth.svg';
 import { lightOrNot } from '../../Utils/lightOrNot';
 
 
-function App({fetchSkills, fetchCodes}) {
+function App({fetchSkills, fetchCodes, fetchHighlight}) {
   const [theme, setTheme] = useState('light');
   const [ openWindow, setOpenWindow ] = useState(false);
   const [ openModifyPopup, setOpenModifyPopup ] = useState(false);
@@ -22,7 +22,8 @@ function App({fetchSkills, fetchCodes}) {
   useEffect(() => {
     fetchSkills();
     fetchCodes();
-  }, [fetchSkills,fetchCodes]);
+    fetchHighlight();
+  }, [fetchSkills,fetchCodes,fetchHighlight]);
   return (
     <div className={`App ${theme}`}>
       <header>

@@ -31,7 +31,8 @@ const skill = (store) => (next) => (action) => {
         {
           name: action.name,
           image: action.image,
-          color: action.color
+          color: action.color,
+          highlight_id: action.highlight_id
         },
         {
           baseURL: 'http://localhost:5000/',
@@ -51,7 +52,8 @@ const skill = (store) => (next) => (action) => {
         {
           name: action.name,
           image: action.image,
-          color: action.color
+          color: action.color,
+          highlight_id: action.highlight_id
         },
         {
           baseURL: 'http://localhost:5000/',

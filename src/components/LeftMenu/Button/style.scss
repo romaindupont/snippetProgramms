@@ -6,14 +6,19 @@
   margin-left: 0.4rem;
   z-index: 2;
   &--add {
-    color: var(--theme-page-text);
-    width: 50%;
+  /*   color: var(--theme-page-text);
     border: 2px solid var(--theme-page-text);
     border-radius: 5px;
     background: var(--theme-page-background);
-    font-family: 'EB Garamond', serif;
+    font-family: "EB Garamond", serif;
     font-weight: 800;
     cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    left: 60px;
+    top: 5px; */
     &:hover {
       color: var(--theme-page-text-hover);
       border: 2px solid var(--theme-page-text-hover);
@@ -21,14 +26,19 @@
     }
   }
   &--delete {
-    color: var(--theme-page-text);
-    width: 50%;
+ /*    color: var(--theme-page-text);
     border: 2px solid var(--theme-page-text);
     border-radius: 5px;
     background: var(--theme-page-background);
-    font-family: 'EB Garamond', serif;
+    font-family: "EB Garamond", serif;
     font-weight: 800;
     cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    left: 5px;
+    top: 60px; */
     &:hover {
       color: var(--theme-page-text-hover);
       border: 2px solid var(--theme-page-text-hover);
@@ -69,4 +79,196 @@
       background: var(--theme-page-background-hover);
     }
   }
+}
+
+.menuLeft-try {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  background:  var(--theme-page-text);
+  margin-left: 0.4rem;
+  z-index: 2;
+  position: fixed;
+  top: 63px;
+  left: -3px;
+  border-radius: 0% 0% 100%;
+  cursor: pointer;
+  transition: all 500ms ease-out;
+  &:hover {
+    transform: scale(1.1);
+
+    & > .trait-1 {
+      border-radius: 0% 0% 90% 0%;
+      border-right: 3px solid var(--theme-page-background);
+      width: 20px;
+      top: 10px;
+    }
+    & > .trait-2 {
+      border-radius: 0% 0% 90% 0%;
+      border-right: 3px solid var(--theme-page-background);
+      width: 15px;
+      top: 10px;
+    }
+    & > .trait-3 {
+      border-radius: 0% 0% 85% 0%;
+      border-right: 3px solid var(--theme-page-background);
+      width: 10px;
+      top: 10px;
+    }
+  }
+}
+.menuLeft-button--add {
+  visibility: hidden;
+  opacity: 0;
+  color: var(--theme-page-text);
+  border: 2px solid var(--theme-page-text);
+  background: var(--theme-page-background);
+  font-family: "EB Garamond", serif;
+  font-weight: 800;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0px;
+  top: 5px;
+  transition: left 500ms ease-in-out;
+  &--open {
+    visibility: visible;
+    opacity: 1;
+    transition: left 500ms ease-in;
+    left: 60px;
+  }
+}
+
+.menuLeft-button--add--open:hover > .tooltip {
+  visibility: visible;
+}
+.menuLeft-button--delete--open:hover > .tooltip {
+  visibility: visible;
+}
+.menuLeft-button--delete--open > img {
+  width: 100%;
+}
+.tooltip {
+  visibility: hidden;
+  width: 120px;
+  background-color: var(--theme-page-text);
+  color: var(--theme-page-background);
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  top: 0;
+  left: 50px;
+  z-index: 99;
+  
+}
+.menuLeft-button--delete {
+  visibility: hidden;
+  opacity: 0;
+  color: var(--theme-page-text);
+  border: 2px solid var(--theme-page-text);
+  background: var(--theme-page-background);
+  font-family: "EB Garamond", serif;
+  font-weight: 800;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  left: 5px;
+  top: 0px;
+  transition: top 500ms ease-in-out;
+  &--open {
+    top: 60px;
+    visibility: visible;
+    opacity: 1;
+    transition: top 500ms ease-in;
+  }
+}
+
+.trait-1 {
+  width: 15px;
+  background-color: transparent;
+  border-bottom: 3px solid var(--theme-page-background);
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+  /* border-right: 3px solid white; */
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  transition: all 500ms ease-in-out;
+  /* border-radius: 0% 0% 90% 0%; */
+  &--open {
+    border-radius: 0% 0% 90% 0%;
+    border-right: 3px solid var(--theme-page-background);
+    width: 20px;
+    top: 10px;
+    transform: rotate(180deg);
+  }
+}
+
+.trait-2 {
+  width: 15px;
+  background-color: transparent;
+  border-bottom: 3px solid var(--theme-page-background);
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+  /* border-right: 3px solid white; */
+  height: 15px;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  transition: all 500ms ease-in-out;
+  /* border-radius: 0% 0% 90% 0%; */
+  &--open {
+    border-radius: 0% 0% 90% 0%;
+    border-right: 3px solid var(--theme-page-background);
+    top: 5px;
+    left: 5px;
+    transform: rotate(180deg);
+  }
+}
+
+.trait-3 {
+  width: 15px;
+  background-color: transparent;
+  border-bottom: 3px solid var(--theme-page-background);
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+  /* border-right: 3px solid white; */
+  height: 10px;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  transition: all 500ms ease-in-out;
+  /* border-radius: 0% 0% 85% 0%; */
+  &--open {
+    border-radius: 0% 0% 85% 0%;
+    border-right: 3px solid var(--theme-page-background);
+    width: 10px;
+    top: 0px;
+    left: 0px;
+    transform: rotate(180deg);
+  }
+}
+
+.menuLeft-try:hover > .trait-3--open {
+  display: none;
+}
+
+.menuLeft-try:hover > .trait-1--open {
+  border-right: 3px solid transparent;
+  border-radius: 0% 0% 0% 0%;
+  width: 15px;
+  top: 10px;
+  transform: rotate(-45deg) translate(0px, -15px);
+}
+
+.menuLeft-try:hover > .trait-2--open {
+  border-radius: 0% 0% 0% 0%;
+  border-right: 3px solid transparent;
+  transform: rotate(45deg) translate(2px, -10px);
 }

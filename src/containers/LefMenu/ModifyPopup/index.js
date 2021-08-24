@@ -14,8 +14,8 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   saveSkill: (id,name,image,color) => {
     dispatch(saveSkill(id,name,image,color));
   },
-  modifyDbSkill: (name,image,color) => {
-    dispatch(modifyDbSkill(name,image,color));
+  modifyDbSkill: (name,image,color,highlight_id) => {
+    dispatch(modifyDbSkill(name,image,color,highlight_id));
   },
   saveId: (id) => {
     dispatch(saveId(id));

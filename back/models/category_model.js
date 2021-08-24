@@ -10,18 +10,21 @@ class Category {
 
   color;
 
+  highlight_id;
+
   constructor(obj) {
     this.id = obj.id;
     this.name = obj.name;
     this.image = obj.image;
     this.color = obj.color;
+    this.highlight_id = obj.highlight_id;
   }
 }
 const dataCategory = {
   addCategory: async (body) => {
-    const sql = 'INSERT INTO skill(name, image, color) VALUES ($1, $2, $3) RETURNING *';
-    const { name, image, color } = body;
-    const result = await db.db.prepare(sql).run({1:name, 2:image, 3:color});
+    const sql = 'INSERT INTO skill(name, image, color, highlight_id) VALUES ($1, $2, $3, $4) RETURNING *';
+    const { name, image, color, highlight_id } = body;
+    const result = await db.db.prepare(sql).run({1:name, 2:image, 3:color, 4:highlight_id});
     return result; 
   },
   lastId: async () => {
@@ -46,9 +49,9 @@ const dataCategory = {
     return result;
   },
   updateCategory: async (body, id) => {
-    const sql = 'UPDATE skill SET name=$1, image=$2, color=$3 WHERE id=$4';
-    const { name, image, color } = body;
-    const result = await db.db.prepare(sql).run({1:name, 2:image, 3:color, 4:id});
+    const sql = 'UPDATE skill SET name=$1, image=$2, color=$3, highlight_id=$4 WHERE id=$5';
+    const { name, image, color, highlight_id } = body;
+    const result = await db.db.prepare(sql).run({1:name, 2:image, 3:color, 4:highlight_id, 5:id});
     return result;
   }
 };
