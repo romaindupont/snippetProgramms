@@ -88,7 +88,7 @@
   background:  var(--theme-page-text);
   margin-left: 0.4rem;
   z-index: 2;
-  position: fixed;
+  position: absolute;
   top: 63px;
   left: -3px;
   border-radius: 0% 0% 100%;
@@ -126,12 +126,12 @@
   font-family: "EB Garamond", serif;
   font-weight: 800;
   cursor: pointer;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   position: absolute;
   left: 0px;
-  top: 5px;
+  top: 1px;
   transition: left 500ms ease-in-out;
   &--open {
     visibility: visible;
@@ -145,6 +145,9 @@
   visibility: visible;
 }
 .menuLeft-button--delete--open:hover > .tooltip {
+  visibility: visible;
+}
+.menuLeft-button--new--open:hover > .tooltip {
   visibility: visible;
 }
 .menuLeft-button--delete--open > img {
@@ -173,11 +176,11 @@
   font-family: "EB Garamond", serif;
   font-weight: 800;
   cursor: pointer;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   position: absolute;
-  left: 5px;
+  left: 1px;
   top: 0px;
   transition: top 500ms ease-in-out;
   &--open {
@@ -187,7 +190,37 @@
     transition: top 500ms ease-in;
   }
 }
-
+.menuLeft-button--new {
+  visibility: hidden;
+  opacity: 0;
+  color: var(--theme-page-text);
+  border: 2px solid var(--theme-page-text);
+  background: var(--theme-page-background);
+  font-family: "EB Garamond", serif;
+  font-weight: 800;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0px;
+  top: 35px;
+  transition: left 500ms ease-in-out;
+  &--open {
+    visibility: visible;
+    opacity: 1;
+    transition: left 500ms ease-in;
+    left: 35px;
+    &:hover {
+      color: var(--theme-page-text-hover);
+      border: 2px solid var(--theme-page-text-hover);
+      background: var(--theme-page-background-hover);
+      & > .str0 {
+        stroke: white;
+      }
+    }
+  }
+}
 .trait-1 {
   width: 15px;
   background-color: transparent;
@@ -271,4 +304,13 @@
   border-radius: 0% 0% 0% 0%;
   border-right: 3px solid transparent;
   transform: rotate(45deg) translate(2px, -10px);
+}
+
+button > svg {
+  margin-top: 0.3rem;
+ 
+}
+
+.menuLeft-button--new--open:hover > .str0 {
+  background-color: red;
 }

@@ -2,9 +2,13 @@ import React, { useState } from 'react';
 import Highlight, { defaultProps } from "prism-react-renderer";
 import './style.scss';
 import classNames from 'classnames';
+import { hoverCode, hoverCodeOut } from '../../Utils/hoverCode';
+import {ReactComponent as Tray} from '../../assets/images/tray.svg';
+import {ReactComponent as Settings} from '../../assets/images/settings.svg';
 
-const VisualisationCode = ({codes, id, skill, changeValue, changeDbCode}) => {
+const VisualisationCode = ({codes, id, skill, changeValue, changeDbCode, theme}) => {
   const [ textAreaOpen, setTextAreaOpen ] = useState(false);
+  const [ openMenu, setOpenMenu ] = useState(false);
   const ClicList = codes.filter((code) => parseInt(code.id) === parseInt(id));
 
   const tabAction = (e) => {
@@ -24,19 +28,28 @@ const VisualisationCode = ({codes, id, skill, changeValue, changeDbCode}) => {
   }
   const changeInformation = (e) => {
     e.preventDefault();
+    /* console.log(/* e.nativeEvent, e.nativeEvent.path[4]) */
     changeDbCode( 
       parseInt(id),
       e.target.form[0].value,
       e.target.form[1].value,
       e.target.form[4].value,
-      parseInt(e.target.form[3].value)
+      parseInt(e.target.form[3].value) 
     )
   }
-
+  const menuOpenClic = () => {
+    setOpenMenu(!openMenu);
+  }
+  const onHover = () => {
+    hoverCode(theme);
+  }
+  const onHoverOut = () => {
+    hoverCodeOut(theme);
+  }
   return (
     <>
     {ClicList.map((list) => (
-      <form type="submit" className="visualisationCode" key={list.id} >
+      <form type="submit" className="visualisationCode" key={list.id} style={{borderColor: `${list.category.color}`}}>
         <label className="visualisationCode-Label-Titre">Titre
         <input
           className="visualisationCode-titre"
@@ -102,7 +115,16 @@ const VisualisationCode = ({codes, id, skill, changeValue, changeDbCode}) => {
             )}
           </Highlight>
         </label>
-        <button className="visualisationCode-button" type="submit" onClick={changeInformation}>Modify</button>
+        <div className="visualisationCode-button-div" onClick={menuOpenClic} >
+          <div className="cube-top">
+            <span className="cube"></span><span className={classNames("cube-1", {"cube-1--open": openMenu})} onMouseOver={onHover} onMouseLeave={onHoverOut} onClick={changeInformation}><Settings onClick={changeInformation}/></span>
+            <span className="cube"></span><span className={classNames("cube-2", {"cube-2--open": openMenu})}></span>
+          </div>
+          <div className="cube-bottom">
+            <span className="cube"></span><span type="submit" className={classNames("cube-3", {"cube-3--open": openMenu})} onMouseOver={onHover} onMouseLeave={onHoverOut}><Tray /></span>
+            <span className="cube"></span><span className={classNames("cube-4", {"cube-4--open": openMenu})}><span>&#x2716;</span></span>
+          </div>
+        </div>
       </form>
       ))}
       </>

@@ -31,9 +31,9 @@ function App({fetchSkills, fetchCodes, fetchHighlight}) {
         <Ligth onClick={changeSize}/>
       </header>
       <div className="monApp">
-        <LeftMenu openWindow={openWindow} setOpenWindow={setOpenWindow} setOpenModifyPopup={setOpenModifyPopup} setOpenNewCode={setOpenNewCode}/>
+        <LeftMenu openWindow={openWindow} setOpenWindow={setOpenWindow} setOpenModifyPopup={setOpenModifyPopup} setOpenNewCode={setOpenNewCode} theme={theme}/>
         <MenuTitreCode setOpenNewCode={setOpenNewCode}/>
-        <VisualisationCode />
+        <VisualisationCode  theme={theme} />
         {openNewCode && (<AddCode setOpenNewCode={setOpenNewCode}/>)}
       </div>
       {openWindow && (<AddPopup setOpenWindow={setOpenWindow}/>)}
