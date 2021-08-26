@@ -5,7 +5,13 @@ import imageSetting from '../../../assets/images/settings.svg';
 import {ReactComponent as Coder} from '../../../assets/images/coder.svg';
 import { hoverCode, hoverCodeOut } from '../../../Utils/hoverCode';
 
-const Button = ({setOpenWindow, setOpenModifyPopup, saveId, setOpenNewCode, theme}) => {
+const Button = ({
+  setOpenWindow,
+  setOpenModifyPopup,
+  saveId,
+  setOpenNewCode,
+  theme
+}) => {
   const [ openMenu, setOpenMenu ] = useState(false);
   const addClic = () => {
     setOpenWindow(true);
@@ -29,7 +35,6 @@ const Button = ({setOpenWindow, setOpenModifyPopup, saveId, setOpenNewCode, them
     hoverCodeOut(theme);
   }
   return (
-/*     <div className="div-button">  */
       <div className="menuLeft-try" onClick={clicMenu}>
         <span className={classNames("trait-1", {"trait-1--open": openMenu})}></span>
         <span className={classNames("trait-2", {"trait-2--open": openMenu})}></span>
@@ -38,8 +43,7 @@ const Button = ({setOpenWindow, setOpenModifyPopup, saveId, setOpenNewCode, them
         <button className={classNames("menuLeft-button--delete", {"menuLeft-button--delete--open": openMenu})} onClick={modifClic}><img src={imageSetting} alt="" /><span className="tooltip">Modifier une categorie</span></button>
         <button className={classNames("menuLeft-button--new", {"menuLeft-button--new--open": openMenu})} onClick={newClick} onMouseOver={onHover} onMouseLeave={onHoverOut}><Coder /><span className="tooltip">Ajouter un code</span></button>
       </div>
-/*     </div> */
-  )
+  );
 }
 
 export default Button;

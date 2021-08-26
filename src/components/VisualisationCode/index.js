@@ -6,7 +6,7 @@ import { hoverCode, hoverCodeOut } from '../../Utils/hoverCode';
 import {ReactComponent as Tray} from '../../assets/images/tray.svg';
 import {ReactComponent as Settings} from '../../assets/images/settings.svg';
 
-const VisualisationCode = ({codes, id, skill, changeValue, changeDbCode, theme}) => {
+const VisualisationCode = ({codes, id, skill, changeValue, changeDbCode, theme, deleteDbCode, saveId}) => {
   const [ textAreaOpen, setTextAreaOpen ] = useState(false);
   const [ openMenu, setOpenMenu ] = useState(false);
   const ClicList = codes.filter((code) => parseInt(code.id) === parseInt(id));
@@ -28,13 +28,12 @@ const VisualisationCode = ({codes, id, skill, changeValue, changeDbCode, theme})
   }
   const changeInformation = (e) => {
     e.preventDefault();
-    /* console.log(/* e.nativeEvent, e.nativeEvent.path[4]) */
     changeDbCode( 
       parseInt(id),
-      e.target.form[0].value,
-      e.target.form[1].value,
-      e.target.form[4].value,
-      parseInt(e.target.form[3].value) 
+      e.currentTarget.form[0].value,
+      e.currentTarget.form[1].value,
+      e.currentTarget.form[4].value,
+      parseInt(e.currentTarget.form[3].value) 
     )
   }
   const menuOpenClic = () => {
@@ -45,6 +44,14 @@ const VisualisationCode = ({codes, id, skill, changeValue, changeDbCode, theme})
   }
   const onHoverOut = () => {
     hoverCodeOut(theme);
+  }
+  const deletingCode = (e) => {
+    e.preventDefault();
+    deleteDbCode(parseInt(id))
+  }
+  const closeCode = (e) => {
+    e.preventDefault();
+    saveId('');
   }
   return (
     <>
@@ -117,12 +124,12 @@ const VisualisationCode = ({codes, id, skill, changeValue, changeDbCode, theme})
         </label>
         <div className="visualisationCode-button-div" onClick={menuOpenClic} >
           <div className="cube-top">
-            <span className="cube"></span><span className={classNames("cube-1", {"cube-1--open": openMenu})} onMouseOver={onHover} onMouseLeave={onHoverOut} onClick={changeInformation}><Settings onClick={changeInformation}/></span>
+            <span className="cube"></span><button className={classNames("cube-1", {"cube-1--open": openMenu})} onMouseOver={onHover} onMouseLeave={onHoverOut} onClick={changeInformation}><Settings /></button>
             <span className="cube"></span><span className={classNames("cube-2", {"cube-2--open": openMenu})}></span>
           </div>
           <div className="cube-bottom">
-            <span className="cube"></span><span type="submit" className={classNames("cube-3", {"cube-3--open": openMenu})} onMouseOver={onHover} onMouseLeave={onHoverOut}><Tray /></span>
-            <span className="cube"></span><span className={classNames("cube-4", {"cube-4--open": openMenu})}><span>&#x2716;</span></span>
+            <span className="cube"></span><button className={classNames("cube-3", {"cube-3--open": openMenu})} onMouseOver={onHover} onMouseLeave={onHoverOut} onClick={deletingCode}><Tray /></button>
+            <span className="cube"></span><button className={classNames("cube-4", {"cube-4--open": openMenu})} onClick={closeCode}><span>&#x2716;</span></button>
           </div>
         </div>
       </form>

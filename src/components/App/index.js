@@ -23,7 +23,7 @@ function App({fetchSkills, fetchCodes, fetchHighlight}) {
     fetchSkills();
     fetchCodes();
     fetchHighlight();
-  }, [fetchSkills,fetchCodes,fetchHighlight]);
+  }, [fetchSkills, fetchCodes, fetchHighlight]);
   return (
     <div className={`App ${theme}`}>
       <header>
@@ -31,7 +31,13 @@ function App({fetchSkills, fetchCodes, fetchHighlight}) {
         <Ligth onClick={changeSize}/>
       </header>
       <div className="monApp">
-        <LeftMenu openWindow={openWindow} setOpenWindow={setOpenWindow} setOpenModifyPopup={setOpenModifyPopup} setOpenNewCode={setOpenNewCode} theme={theme}/>
+        <LeftMenu 
+          openWindow={openWindow} 
+          setOpenWindow={setOpenWindow} 
+          setOpenModifyPopup={setOpenModifyPopup} 
+          setOpenNewCode={setOpenNewCode} 
+          theme={theme}
+        />
         <MenuTitreCode setOpenNewCode={setOpenNewCode}/>
         <VisualisationCode  theme={theme} />
         {openNewCode && (<AddCode setOpenNewCode={setOpenNewCode}/>)}

@@ -137,3 +137,15 @@ export const SaveDbHighLight = (highlightList) => ({
   type: SAVE_DB_HIGHLIGHT,
   highlightList
 });
+
+export const DELETE_DB_CODE = 'DELETE_DB_CODE';
+export const deleteDbCode = (id) => ({
+  type: DELETE_DB_CODE,
+  id
+});
+
+export const DELETE_CODE = 'DELETE_CODE';
+export const deleteCode = (id) => ({
+  type: DELETE_CODE,
+  id
+});

@@ -6,19 +6,6 @@
   margin-left: 0.4rem;
   z-index: 2;
   &--add {
-  /*   color: var(--theme-page-text);
-    border: 2px solid var(--theme-page-text);
-    border-radius: 5px;
-    background: var(--theme-page-background);
-    font-family: "EB Garamond", serif;
-    font-weight: 800;
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    position: absolute;
-    left: 60px;
-    top: 5px; */
     &:hover {
       color: var(--theme-page-text-hover);
       border: 2px solid var(--theme-page-text-hover);
@@ -26,19 +13,6 @@
     }
   }
   &--delete {
- /*    color: var(--theme-page-text);
-    border: 2px solid var(--theme-page-text);
-    border-radius: 5px;
-    background: var(--theme-page-background);
-    font-family: "EB Garamond", serif;
-    font-weight: 800;
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    position: absolute;
-    left: 5px;
-    top: 60px; */
     &:hover {
       color: var(--theme-page-text-hover);
       border: 2px solid var(--theme-page-text-hover);
@@ -63,7 +37,6 @@
   background: transparent;
   margin-left: 0.4rem;
   z-index: 2;
-
   &--new {
     color: var(--theme-page-text);
     width: 50%;
@@ -96,7 +69,6 @@
   transition: all 500ms ease-out;
   &:hover {
     transform: scale(1.1);
-
     & > .trait-1 {
       border-radius: 0% 0% 90% 0%;
       border-right: 3px solid var(--theme-page-background);
@@ -117,6 +89,7 @@
     }
   }
 }
+
 .menuLeft-button--add {
   visibility: hidden;
   opacity: 0;
@@ -144,15 +117,19 @@
 .menuLeft-button--add--open:hover > .tooltip {
   visibility: visible;
 }
+
 .menuLeft-button--delete--open:hover > .tooltip {
   visibility: visible;
 }
+
 .menuLeft-button--new--open:hover > .tooltip {
   visibility: visible;
 }
+
 .menuLeft-button--delete--open > img {
   width: 100%;
 }
+
 .tooltip {
   visibility: hidden;
   width: 120px;
@@ -165,8 +142,8 @@
   top: 0;
   left: 50px;
   z-index: 99;
-  
 }
+
 .menuLeft-button--delete {
   visibility: hidden;
   opacity: 0;
@@ -190,6 +167,7 @@
     transition: top 500ms ease-in;
   }
 }
+
 .menuLeft-button--new {
   visibility: hidden;
   opacity: 0;
@@ -221,19 +199,18 @@
     }
   }
 }
+
 .trait-1 {
   width: 15px;
   background-color: transparent;
   border-bottom: 3px solid var(--theme-page-background);
   border-top: 1px solid transparent;
   border-left: 1px solid transparent;
-  /* border-right: 3px solid white; */
   height: 20px;
   position: absolute;
   top: 0;
   left: 10px;
   transition: all 500ms ease-in-out;
-  /* border-radius: 0% 0% 90% 0%; */
   &--open {
     border-radius: 0% 0% 90% 0%;
     border-right: 3px solid var(--theme-page-background);
@@ -249,13 +226,11 @@
   border-bottom: 3px solid var(--theme-page-background);
   border-top: 1px solid transparent;
   border-left: 1px solid transparent;
-  /* border-right: 3px solid white; */
   height: 15px;
   position: absolute;
   top: 0;
   left: 10px;
   transition: all 500ms ease-in-out;
-  /* border-radius: 0% 0% 90% 0%; */
   &--open {
     border-radius: 0% 0% 90% 0%;
     border-right: 3px solid var(--theme-page-background);
@@ -271,13 +246,11 @@
   border-bottom: 3px solid var(--theme-page-background);
   border-top: 1px solid transparent;
   border-left: 1px solid transparent;
-  /* border-right: 3px solid white; */
   height: 10px;
   position: absolute;
   top: 0;
   left: 10px;
   transition: all 500ms ease-in-out;
-  /* border-radius: 0% 0% 85% 0%; */
   &--open {
     border-radius: 0% 0% 85% 0%;
     border-right: 3px solid var(--theme-page-background);
@@ -308,7 +281,6 @@
 
 button > svg {
   margin-top: 0.3rem;
- 
 }
 
 .menuLeft-button--new--open:hover > .str0 {

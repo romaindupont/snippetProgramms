@@ -15,8 +15,7 @@ const Select = ({ changeValue, highlight}) => {
       </select>
       </label>
     </div>
-  )
-    
+  )  
 }
 
 export default Select;
