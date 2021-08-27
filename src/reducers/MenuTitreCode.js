@@ -1,4 +1,11 @@
-import { SAVE_ID, CHANGE_CODE, ADD_CODE, SAVE_DB_CODES, SAVE_DB_HIGHLIGHT, DELETE_CODE } from '../actions';
+import {
+  SAVE_ID,
+  CHANGE_CODE,
+  ADD_CODE,
+  SAVE_DB_CODES,
+  SAVE_DB_HIGHLIGHT,
+  DELETE_CODE
+} from '../actions';
 
 const initialState = {
   codes : [],

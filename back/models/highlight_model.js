@@ -38,4 +38,4 @@ const dataHighlight = {
 
 module.exports = {
   dataHighlight,
-  }
+}

@@ -1,7 +1,6 @@
 import React from 'react';
 import Field from '../../../containers/LefMenu/AddPopup/Field';
 import Select from '../../../containers/LefMenu/AddPopup/Select';
-import './style.scss';
 
 const ModifyPopup = ({
   setOpenModifyPopup,
@@ -24,7 +23,7 @@ const ModifyPopup = ({
   }
   const handleSubmit = (e) => {
     e.preventDefault();
-    saveId(parseInt(e.target[0].value))
+    saveId(parseInt(e.target[0].value));
     modifyDbSkill(
       e.target[2].value,
       e.target[1].value,

@@ -26,7 +26,7 @@ const Button = ({
     setOpenNewCode(true);
   }
   const clicMenu = () => {
-    setOpenMenu(!openMenu)
+    setOpenMenu(!openMenu);
   }
   const onHover = () => {
     hoverCode(theme);

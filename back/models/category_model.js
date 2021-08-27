@@ -58,4 +58,4 @@ const dataCategory = {
 
 module.exports = {
   dataCategory,
-  }
+}

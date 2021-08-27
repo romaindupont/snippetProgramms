@@ -36,26 +36,27 @@ pre, textarea {
   font-family: 'Inconsolata', monospace;
   tab-size: 2;
   margin: 1em 0px;
- 
- 
 }
+
 pre {
   background-color: #222 !important;
   border-radius: 5px;
   padding: 0.5rem;
   border: #fff solid 1px;
 }
+
 .preClass {
   width: 93%;
   height: 65vh;
   display: block;
   white-space: pre-wrap;
-  
+  overflow-y: scroll;
 }
 
 .preClass--close {
   display: none;
 }
+
 .textarea {
   display: none;
   width: 93%;
@@ -75,7 +76,6 @@ pre {
 }
 
 input[type=text] {
-  
   border-bottom: 2px dashed;
   width: 50%;
 }
@@ -86,7 +86,6 @@ input[type=text] {
   margin-top: 1rem;
   margin-left: 4.5rem;
   border-radius: 10px;
-
 }
 
 .visualisationCode-button {
@@ -111,15 +110,18 @@ input[type=text] {
       background: var(--theme-page-background-hover);
   }
 }
+
 .visualisationCode-button:hover > .tooltip {
   visibility: visible;
   width: 80px;
   top: 50px;
   left: -10px;
 }
+
 a {
   color: var(--theme-page-text);
 }
+
 .visualisationCode-cadre-color {
   position: relative;
   height: 1%;
@@ -167,6 +169,7 @@ a {
     transform: rotate(180deg);
   }
 }
+
 .cube {
   width: 10px;
   height: 10px;

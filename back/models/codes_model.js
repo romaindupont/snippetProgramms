@@ -52,4 +52,4 @@ const dataCodes = {
 
 module.exports = {
   dataCodes,
-  }
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Select = ({ changeValue, highlight}) => {
+const Select = ({ changeValue, highlight }) => {
   return (
     <div className="addPopup-highlight">
       <label>Style Highlight

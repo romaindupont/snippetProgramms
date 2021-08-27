@@ -3,15 +3,15 @@ import LeftMenu from '../LeftMenu';
 import MenuTitreCode from '../../containers/MenuTitreCode';
 import VisualisationCode from '../../containers/VisualisationCode';
 import AddCode from '../../containers/AddCode';
-import './style.scss';
-import '../../styles/theme.scss';
 import AddPopup from '../../containers/LefMenu/AddPopup';
 import ModifyPopup from '../../containers/LefMenu/ModifyPopup';
+import './style.scss';
+import '../../styles/theme.scss';
 import {ReactComponent as Ligth} from '../../assets/images/newligth.svg';
 import { lightOrNot } from '../../Utils/lightOrNot';
 
 
-function App({fetchSkills, fetchCodes, fetchHighlight}) {
+function App({ fetchSkills, fetchCodes, fetchHighlight }) {
   const [theme, setTheme] = useState('light');
   const [ openWindow, setOpenWindow ] = useState(false);
   const [ openModifyPopup, setOpenModifyPopup ] = useState(false);

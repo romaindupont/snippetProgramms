@@ -3,7 +3,7 @@ import Field from '../../../containers/LefMenu/AddPopup/Field';
 import Select from '../../../containers/LefMenu/AddPopup/Select';
 import './style.scss';
 
-const AddPopup = ({setOpenWindow, addDbSkill}) => {
+const AddPopup = ({ setOpenWindow, addDbSkill }) => {
   const [ error, setError ] = useState(false);
   const closeClick = () => {
     setOpenWindow(false);

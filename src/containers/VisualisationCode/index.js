@@ -9,7 +9,6 @@ const mapStateToProps = (state, ownProps) => ({
   currentValue: state.MenuTitreCode[ownProps.name]
 });
 
-/* const mapDispatchToProps = {} */
 const mapDispatchToProps = (dispatch, ownProps) => ({
    changeValue: (newValue) => {
     dispatch(changeValue(newValue, ownProps.name));

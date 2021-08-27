@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import './style.scss';
 
-const MenuTitreCode = ({codes, id, saveId, setOpenNewCode, wait}) => {
+const MenuTitreCode = ({
+  codes,
+  id,
+  saveId,
+  setOpenNewCode,
+  wait
+}) => {
   const [ searchTerm, setSearchTerm ] = useState('');
   const inputWord = (e) => {
     setSearchTerm(e.target.value);
@@ -32,11 +38,10 @@ const MenuTitreCode = ({codes, id, saveId, setOpenNewCode, wait}) => {
           <h1 data-my-id={code.id} className="cadre-titre">{code.titre}</h1>
           <p data-my-id={code.id} className="cadre-description">{code.description}</p>
         </div>
-         )))}
+        )))}
       </div>
     </div>
   )
-    
 }
 
 export default MenuTitreCode;

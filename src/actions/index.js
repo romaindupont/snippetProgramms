@@ -19,7 +19,7 @@ export const addSkill = (id, name, image, color) => ({
 export const DELETE_SKILL = 'DELETE_SKILL';
 export const deleteSkill = (id) => ({
   type: DELETE_SKILL,
-  id,
+  id
 });
 
 export const CHANGE_VALUE = 'CHANGE_VALUE';
