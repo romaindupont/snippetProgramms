@@ -1,9 +1,12 @@
 # APPLICATION FOR SAVE BEST CODE or SNIPPET CODE ORGANIZER
 
-It's a web application (exclusively for the moment). This application allow you to keep localy your best snippet of codes and find them very quickly.
-it's allowing to put them under category like javascript or php for example or to create new category.
-A searchBar is allowing you to find by a very esiest way your best code by keyword.
-The synthaxt highlighting are use for highlighting the code in function of the category.
+It's a web application (exclusively for the moment). 
+<br>
+This application allow you to keep localy your best snippet of codes and find them very quickly.
+<br>
+it's allowing to put them under category like javascript or php for example or to create new category.<br>
+A searchBar is allowing you to find by a very esiest way your best code by keyword.<br>
+The synthaxt highlighting are use for highlighting the code in function of the category.<br>
 If you use the bulb you can have a dark mode.
 
 
@@ -59,4 +62,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Some Screen Print
 
-![visuel]()
+![visuel](https://github.com/romaindupont/snippetProgramms/blob/main/src/assets/images/Capture1.PNG?raw=true)
+![visuel](https://github.com/romaindupont/snippetProgramms/blob/main/src/assets/images/Capture2.PNG?raw=true)
