@@ -2,7 +2,13 @@ import React, { useState } from 'react';
 import Highlight, { defaultProps } from "prism-react-renderer";
 import classNames from 'classnames';
 
-const AddCode = ({skill, changeValue, addDbCode, currentValue, setOpenNewCode}) => {
+const AddCode = ({
+  skill,
+  changeValue,
+  addDbCode,
+  currentValue,
+  setOpenNewCode
+}) => {
   const [ textAreaOpen, setTextAreaOpen ] = useState(false);
   const tabAction = (e) => {
     if (e.key === 'Tab') {
@@ -21,20 +27,14 @@ const AddCode = ({skill, changeValue, addDbCode, currentValue, setOpenNewCode}) 
   }
   const register = (e) => {
     e.preventDefault();
-    /* const changeSkill = skill.filter((skills) => skills.id === parseInt(e.target.form[3].value));
-    newId = codes.length + 1; */
-    addDbCode(e.target.form[0].value,e.target.form[1].value,e.target.form[4].value,e.target.form[3].value)
-/*       parseInt(newId),
-      e.target.form[0].value,
-      e.target.form[1].value,
-      e.target.form[3].value,
-      e.target.form[4].value,
-      changeSkill[0].name,
-      changeSkill[0].color
-    ); */
-    setOpenNewCode(false)
+    addDbCode(
+      e.currentTarget.form[0].value,
+      e.currentTarget.form[1].value,
+      e.currentTarget.form[4].value,
+      e.currentTarget.form[3].value
+    );
+    setOpenNewCode(false);
   }
-
   return (
     <>
       <form type="submit" className="visualisationCode" >
@@ -103,9 +103,9 @@ const AddCode = ({skill, changeValue, addDbCode, currentValue, setOpenNewCode}) 
             )}
           </Highlight>
         </label>
-        <button className="visualisationCode-button" type="submit" onClick={register}>New</button>
+        <button className="visualisationCode-button" type="submit" onClick={register}><span>&#43;</span><span className="tooltip">Ajouter le code</span></button>
       </form>
-      </>
+    </>
   )  
 }
 

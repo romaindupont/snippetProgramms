@@ -31,13 +31,19 @@ const skill = (store) => (next) => (action) => {
         {
           name: action.name,
           image: action.image,
-          color: action.color
+          color: action.color,
+          highlight_id: action.highlight_id
         },
         {
           baseURL: 'http://localhost:5000/',
         })
         .then((response) => {
-          store.dispatch(addSkill(response.data.skillJustCreate.id,response.data.skillJustCreate.name,response.data.skillJustCreate.image,response.data.skillJustCreate.color));
+          store.dispatch(addSkill(
+            response.data.skillJustCreate.id,
+            response.data.skillJustCreate.name,
+            response.data.skillJustCreate.image,
+            response.data.skillJustCreate.color
+          ));
         })
         .catch((error) => {
           console.error('Error', error);
@@ -51,13 +57,19 @@ const skill = (store) => (next) => (action) => {
         {
           name: action.name,
           image: action.image,
-          color: action.color
+          color: action.color,
+          highlight_id: action.highlight_id
         },
         {
           baseURL: 'http://localhost:5000/',
         })
         .then((response) => {
-          store.dispatch(modifySkill(state.leftMenu.id,action.name,action.image,action.color));
+          store.dispatch(modifySkill(
+            state.leftMenu.id,
+            action.name,
+            action.image,
+            action.color
+          ));
         })
         .catch((error) => {
           console.error('Error', error);

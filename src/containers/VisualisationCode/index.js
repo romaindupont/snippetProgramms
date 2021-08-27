@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import VisualisationCode from '../../components/VisualisationCode';
-import { changeValue, changeCode, changeDbCode } from '../../actions';
+import { changeValue, changeCode, changeDbCode, deleteDbCode, saveId } from '../../actions';
 
 const mapStateToProps = (state, ownProps) => ({
   codes: state.MenuTitreCode.codes,
@@ -9,7 +9,6 @@ const mapStateToProps = (state, ownProps) => ({
   currentValue: state.MenuTitreCode[ownProps.name]
 });
 
-/* const mapDispatchToProps = {} */
 const mapDispatchToProps = (dispatch, ownProps) => ({
    changeValue: (newValue) => {
     dispatch(changeValue(newValue, ownProps.name));
@@ -19,6 +18,12 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
   changeDbCode: (id, titre, description, code, skill_id) => {
     dispatch(changeDbCode(id, titre, description, code, skill_id));
+  },
+  deleteDbCode:(id) => {
+    dispatch(deleteDbCode(id));
+  },
+  saveId:(id) => {
+    dispatch(saveId(id));
   }
 });
 

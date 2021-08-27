@@ -9,7 +9,6 @@
     margin-top: 1rem;
     width: 25%;
     z-index: 1;
- 
   }
   &-titre {
     font-size: 0.8rem;
@@ -17,7 +16,6 @@
     font-weight: bold;
     margin-bottom: 0.5rem;
     z-index: 1;
-    
   }
   &-color {
     width: 60%;
@@ -28,7 +26,6 @@
     left: 20px;
     border-radius: 15px;
     transition: all 500ms ease-in-out;
-
   }
 }
 
@@ -57,5 +54,4 @@
     left: 0px;
     border-radius: 15px;
   }
-
 }

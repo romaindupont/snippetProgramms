@@ -6,7 +6,9 @@ import {
   ADD_DB_CODE,
   addCode,
   CHANGE_DB_CODE,
-  changeCode 
+  changeCode,
+  DELETE_DB_CODE,
+  deleteCode
 } from '../actions';
 
 const codes = (store) => (next) => (action) => {
@@ -44,7 +46,7 @@ const codes = (store) => (next) => (action) => {
           baseURL: 'http://localhost:5000/',
         })
         .then((response) => {
-          const changeSkill = state.leftMenu.skill.filter((skills) => skills.id === parseInt(response.data.codeJustCreate.id));
+          const changeSkill = state.leftMenu.skill.filter((skills) => skills.id === parseInt(response.data.codeJustCreate.skill_id));
           store.dispatch(addCode(
             response.data.codeJustCreate.id,
             response.data.codeJustCreate.titre,
@@ -89,6 +91,20 @@ const codes = (store) => (next) => (action) => {
           console.error('Error', error);
         });
       break;
+      }
+    case DELETE_DB_CODE:
+      {
+        axios.delete(`/codes/delete/${action.id}`,
+        {
+          baseURL: 'http://localhost:5000/',
+        })
+        .then((response) => {
+          store.dispatch(deleteCode(action.id));
+        })
+        .catch((error) => {
+          console.error('Error', error);
+        });
+        break;
       }
     default:
       next(action);

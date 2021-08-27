@@ -2,11 +2,23 @@ import React, { useState } from 'react';
 import Highlight, { defaultProps } from "prism-react-renderer";
 import './style.scss';
 import classNames from 'classnames';
+import { hoverCode, hoverCodeOut } from '../../Utils/hoverCode';
+import {ReactComponent as Tray} from '../../assets/images/tray.svg';
+import {ReactComponent as Settings} from '../../assets/images/settings.svg';
 
-const VisualisationCode = ({codes, id, skill, changeValue, changeDbCode}) => {
+const VisualisationCode = ({
+  codes,
+  id,
+  skill,
+  changeValue,
+  changeDbCode,
+  theme,
+  deleteDbCode,
+  saveId
+}) => {
   const [ textAreaOpen, setTextAreaOpen ] = useState(false);
+  const [ openMenu, setOpenMenu ] = useState(false);
   const ClicList = codes.filter((code) => parseInt(code.id) === parseInt(id));
-
   const tabAction = (e) => {
     if (e.key === 'Tab') {
       e.preventDefault();
@@ -26,17 +38,33 @@ const VisualisationCode = ({codes, id, skill, changeValue, changeDbCode}) => {
     e.preventDefault();
     changeDbCode( 
       parseInt(id),
-      e.target.form[0].value,
-      e.target.form[1].value,
-      e.target.form[4].value,
-      parseInt(e.target.form[3].value)
-    )
+      e.currentTarget.form[0].value,
+      e.currentTarget.form[1].value,
+      e.currentTarget.form[4].value,
+      parseInt(e.currentTarget.form[3].value) 
+    );
   }
-
+  const menuOpenClic = () => {
+    setOpenMenu(!openMenu);
+  }
+  const onHover = () => {
+    hoverCode(theme);
+  }
+  const onHoverOut = () => {
+    hoverCodeOut(theme);
+  }
+  const deletingCode = (e) => {
+    e.preventDefault();
+    deleteDbCode(parseInt(id));
+  }
+  const closeCode = (e) => {
+    e.preventDefault();
+    saveId('');
+  }
   return (
     <>
     {ClicList.map((list) => (
-      <form type="submit" className="visualisationCode" key={list.id} >
+      <form type="submit" className="visualisationCode" key={list.id} style={{borderColor: `${list.category.color}`}}>
         <label className="visualisationCode-Label-Titre">Titre
         <input
           className="visualisationCode-titre"
@@ -88,7 +116,7 @@ const VisualisationCode = ({codes, id, skill, changeValue, changeDbCode}) => {
             onChange={(e)=> changeValue(e.target.value)}
             className={classNames("textarea", {"textarea--open": textAreaOpen})}
           />
-          <Highlight {...defaultProps} code={list.code} language={list.category.name} onClick={handleClick}>
+          <Highlight {...defaultProps} code={list.code} language={list.category.highlightName} onClick={handleClick}>
             {({ className, style, tokens, getLineProps, getTokenProps }) => (
               <pre className={`${className} ${classNames("preClass", {"preClass--close":textAreaOpen})}`} style={style} onClick={handleClick}>
                 {tokens.map((line, i) => (
@@ -102,10 +130,42 @@ const VisualisationCode = ({codes, id, skill, changeValue, changeDbCode}) => {
             )}
           </Highlight>
         </label>
-        <button className="visualisationCode-button" type="submit" onClick={changeInformation}>Modify</button>
+        <div className="visualisationCode-button-div" onClick={menuOpenClic} >
+          <div className="cube-top">
+            <span className="cube"></span>
+            <button
+              className={classNames("cube-1", {"cube-1--open": openMenu})}
+              onMouseOver={onHover}
+              onMouseLeave={onHoverOut}
+              onClick={changeInformation}
+            >
+              <Settings />
+            </button>
+            <span className="cube"></span>
+            <span className={classNames("cube-2", {"cube-2--open": openMenu})}></span>
+          </div>
+          <div className="cube-bottom">
+            <span className="cube"></span>
+            <button
+              className={classNames("cube-3", {"cube-3--open": openMenu})}
+              onMouseOver={onHover}
+              onMouseLeave={onHoverOut}
+              onClick={deletingCode}
+            >
+              <Tray />
+            </button>
+            <span className="cube"></span>
+            <button
+              className={classNames("cube-4", {"cube-4--open": openMenu})}
+              onClick={closeCode}
+            >
+              <span>&#x2716;</span>
+            </button>
+          </div>
+        </div>
       </form>
       ))}
-      </>
+    </>
   )  
 }
 

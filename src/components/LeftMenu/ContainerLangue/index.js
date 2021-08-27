@@ -1,7 +1,6 @@
 import React from 'react';
 import './style.scss';
 
-
 const ContainerLangue = ({ AllLanguage, saveSkill }) => {
   const skillClick = (e) => {
     e.preventDefault();
@@ -10,7 +9,7 @@ const ContainerLangue = ({ AllLanguage, saveSkill }) => {
       e.target.getAttribute('data-my-name'),
       e.target.getAttribute('data-my-image'),
       e.target.getAttribute('data-my-color')
-    )
+    );
   }
   return (
     <div className="languageContainer">
@@ -53,8 +52,7 @@ const ContainerLangue = ({ AllLanguage, saveSkill }) => {
         </div>
         ))}
     </div>
-  )
-    
+  ) 
 }
 
 export default ContainerLangue;

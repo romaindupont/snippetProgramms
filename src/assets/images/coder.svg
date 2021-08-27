@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="8mm" height="8mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 2646 2646"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+    .str3 {stroke:#2B2A29;stroke-width:132.29}
+    .fil0 {fill:none}
+  </style>
+ </defs>
+ <g id="essai">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_2507947860752">
+   <g>
+    <line class="fil0 str3" x1="754" y1="664" x2="357" y2= "1151" />
+    <line class="fil0 str3" x1="334" y1="1101" x2="801" y2= "1436" />
+   </g>
+   <g>
+    <line class="fil0 str3" x1="1402" y1="1472" x2="1861" y2= "1042" />
+    <line class="fil0 str3" x1="1877" y1="1095" x2="1460" y2= "700" />
+   </g>
+   <line class="fil0 str3" x1="1235" y1="659" x2="991" y2= "1470" />
+  </g>
+ </g>
+</svg>

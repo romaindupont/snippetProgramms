@@ -2,9 +2,8 @@
 
 .menuTitreCode {
   width: 20%;
-  height: 90vh;
+  height: 100vh;
   border: 4px solid var(--theme-page-text);
-
 }
 
 .monApp {
@@ -26,9 +25,7 @@
     cursor: pointer;
     margin-bottom: 1rem;
   }
-
 }
-
 
 .menuTitreCode-search {
   margin-left: 1rem;
@@ -66,7 +63,6 @@
   margin-bottom: 0.5rem;
   display: flex;
   flex-direction: column;
-  
   &:hover {
     border: 1px solid var(--theme-page-background);
   }
@@ -83,7 +79,6 @@
     position: absolute;
     left: -5px;
     transition: width 500ms ease-in-out;
-    
   }
   &-titre {
     margin: 0;
@@ -97,4 +92,3 @@
     z-index: 3;
   }
 }
-
