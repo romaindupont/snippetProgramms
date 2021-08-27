@@ -277,6 +277,7 @@ a {
     z-index: 1;
     & > span {
       font-size: 2rem;
+      color: var(--theme-page-text);
     }
     &:hover {
       background: var(--theme-page-text);
